@@ -1,9 +1,10 @@
-package com.example.vacunas
+package com.example.vacunas.ui.main.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.vacunas.R
+import com.example.vacunas.base.BaseActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
