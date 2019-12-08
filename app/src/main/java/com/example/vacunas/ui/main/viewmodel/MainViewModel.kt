@@ -3,7 +3,12 @@ package com.example.vacunas.ui.main.viewmodel
 import com.example.vacunas.base.ui.BaseViewCommand
 import com.example.vacunas.base.ui.BaseViewModel
 import com.example.vacunas.utils.Constants
-import kotlinx.coroutines.*
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import kotlinx.coroutines.Dispatchers
+
 
 class MainViewModel : BaseViewModel() {
 

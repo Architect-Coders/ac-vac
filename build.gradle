@@ -18,11 +18,9 @@ plugins {
     id "io.gitlab.arturbosch.detekt" version "1.2.2"
 }
 
-detekt {
-    version = "1.2.2"
-    input = files("$projectDir/app/src/main/java")
-    config = files("$projectDir/config/detekt/detekt.yml")
-    filters = ".*test.*,.*/resources/.*,.*/tmp/.*"
+dependencies {
+    detekt "io.gitlab.arturbosch.detekt:detekt-cli:1.2.2"
+    detekt "io.gitlab.arturbosch.detekt:detekt-formatting:1.2.2"
 }
 
 allprojects {
@@ -34,4 +32,11 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+detekt {
+    version = "1.2.2"
+    input = files("$projectDir/app/src/main/java")
+    config = files("$projectDir/config/detekt/detekt.yml")
+    filters = ".*test.*,.*/resources/.*,.*/tmp/.*"
 }

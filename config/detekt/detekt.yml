@@ -1,10 +1,10 @@
 build:
-  maxIssues: 50
+  maxIssues: 10
   weights:
-    # complexity: 2
-    # LongParameterList: 1
-    # style: 1
-    # comments: 1
+  # complexity: 2
+  # LongParameterList: 1
+  # style: 1
+  # comments: 1
 
 config:
   validation: true
@@ -24,31 +24,68 @@ processors:
 console-reports:
   active: true
   exclude:
-  #  - 'ProjectStatisticsReport'
-  #  - 'ComplexityReport'
-  #  - 'NotificationReport'
-  #  - 'FindingsReport'
-     - 'FileBasedFindingsReport'
-  #  - 'BuildFailureReport'
+    # - 'ProjectStatisticsReport'
+    # - 'ComplexityReport'
+    # - 'NotificationReport'
+    # - 'FindingsReport'
+    - 'FileBasedFindingsReport'
+  # - 'BuildFailureReport'
 
+# See https://arturbosch:github:io/detekt/comments:html:
 comments:
   active: true
   excludes: "**/test/**,**/androidTest/**,**/*.Test.kt,**/*.Spec.kt,**/*.Spek.kt"
+
+  #  This rule reports comments and documentation that has been added to private functions.
+  #  These comments get reported because they probably explain the functionality of the private function.
+  #  However private functions should be small enough and have an understandable name so that they are
+  #  self-explanatory and do not need this comment in the first place.
+  #
+  #  Instead of simply removing this comment to solve this issue prefer to split up the function
+  #  into smaller functions with better names if necessary. Giving the function a better,
+  #  more descriptive name can also help in solving this issue.
   CommentOverPrivateFunction:
     active: false
+
+  #  This rule reports comments and documentation above private properties.
+  #  This can indicate that the property has a confusing name or is not in a small enough context
+  #  to be understood. Private properties should be named in a self-explanatory way
+  #  and readers of the code should be able to understand why the property exists
+  #  and what purpose it solves without the comment.
+  #
+  #  Instead of simply removing the comment to solve this issue prefer renaming the property
+  #  to a more self-explanatory name. If this property is inside a bigger class it could make senes
+  #  to refactor and split up the class. This can increase readability and make the documentation obsolete.
   CommentOverPrivateProperty:
     active: false
+
+  #  This rule validates the end of the first sentence of a KDoc comment.
+  #  It should end with proper punctuation or with a correct URL.
   EndOfSentenceFormat:
     active: false
     endOfSentenceFormat: ([.?!][ \t\n\r\f<])|([.?!:]$)
+
+  #  This rule reports public classes, objects and interfaces which do not have the required documentation.
+  #  Enable this rule if the codebase should have documentation on every public class, interface and object.
+  #
+  #  By default this rule also searches for nested and inner classes and objects.
+  #  This default behavior can be changed with the configuration options of this rule.
   UndocumentedPublicClass:
     active: false
     searchInNestedClass: true
     searchInInnerClass: true
     searchInInnerObject: true
     searchInInnerInterface: true
+
+  #  This rule will report any public function which does not have the required documentation.
+  #  If the codebase should have documentation on all public functions enable this rule
+  #  to enforce this. Overridden functions are excluded by this rule.
   UndocumentedPublicFunction:
     active: false
+
+  #  This rule will report any public property which does not have the required documentation.
+  #  If the codebase should have documentation on all public properties enable this rule
+  #  to enforce this. Overridden functions are excluded by this rule.
   UndocumentedPublicProperty:
     active: false
 
@@ -173,26 +210,27 @@ exceptions:
     active: true
     excludes: "**/test/**,**/androidTest/**,**/*.Test.kt,**/*.Spec.kt,**/*.Spek.kt"
     exceptionNames:
-     - ArrayIndexOutOfBoundsException
-     - Error
-     - Exception
-     - IllegalMonitorStateException
-     - NullPointerException
-     - IndexOutOfBoundsException
-     - RuntimeException
-     - Throwable
+      - ArrayIndexOutOfBoundsException
+      - Error
+      - Exception
+      - IllegalMonitorStateException
+      - NullPointerException
+      - IndexOutOfBoundsException
+      - RuntimeException
+      - Throwable
     allowedExceptionNameRegex: "^(_|(ignore|expected).*)"
   TooGenericExceptionThrown:
     active: true
     exceptionNames:
-     - Error
-     - Exception
-     - Throwable
-     - RuntimeException
+      - Error
+      - Exception
+      - Throwable
+      - RuntimeException
 
+#  See https://developer.android.com/kotlin/style-guide
 formatting:
   active: true
-  android: false
+  android: true
   autoCorrect: true
   AnnotationOnSeparateLine:
     active: false
