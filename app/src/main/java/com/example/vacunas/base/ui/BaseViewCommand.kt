@@ -13,6 +13,6 @@ sealed class BaseViewCommand {
     class Action(val actionId: Int = -1, val params: Map<String, Any> = emptyMap()) :
         BaseViewCommand()
 
-    class ConfigureToolbar() : BaseViewCommand()
+    class ConfigureToolbar : BaseViewCommand()
     class ShowToast(val msg: String, val duration: Int = Toast.LENGTH_SHORT) : BaseViewCommand()
 }

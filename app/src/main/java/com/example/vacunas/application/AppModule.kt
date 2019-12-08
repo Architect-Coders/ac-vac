@@ -9,7 +9,6 @@ import com.google.gson.GsonBuilder
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
-
 val appModule = module {
     // Provide Singletons
     single { AndroidResourceHelper(get()) }

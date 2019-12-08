@@ -10,10 +10,10 @@ abstract class BaseFragment<T : BaseViewModel> : Fragment() {
 
     abstract val viewModel: T
 
-
     //region Override Lifecycle methods
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View = inflater.inflate(getLayoutId(), container, false)
 

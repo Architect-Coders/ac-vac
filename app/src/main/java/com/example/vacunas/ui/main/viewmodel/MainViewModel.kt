@@ -9,14 +9,16 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.Dispatchers
 
-
 class MainViewModel : BaseViewModel() {
+    companion object {
+        const val DELAY_SPLASH = 3000L
+    }
 
     init {
         _viewCommand.value = BaseViewCommand.GoTo(to = Constants.Screens.SPLASH_FRAGMENT)
 
         GlobalScope.launch {
-            delay(3000)
+            delay(DELAY_SPLASH)
             withContext(Dispatchers.Main) {
                 _viewCommand.value = BaseViewCommand.GoTo(
                     to = Constants.Screens.BLANK_FRAGMENT

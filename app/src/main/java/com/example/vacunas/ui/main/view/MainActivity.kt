@@ -13,13 +13,11 @@ import com.example.vacunas.ui.splash.view.SplashFragment
 import com.example.vacunas.utils.Constants.Screens.SPLASH_FRAGMENT
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-
 class MainActivity : BaseActivity<MainViewModel>() {
 
     override val viewModel: MainViewModel by viewModel()
 
     private val loadingLayout: FrameLayout by bindView(R.id.main_loading)
-
 
     //region Override BaseActivity methods
     override fun getLayoutId(): Int = R.layout.activity_main
@@ -28,8 +26,7 @@ class MainActivity : BaseActivity<MainViewModel>() {
         viewModel.getViewCommand().observe(this, Observer {
             when (it) {
                 is BaseViewCommand.GoTo -> {
-                    val toFragment = if (it.to == SPLASH_FRAGMENT)
-                        SplashFragment() else BlankFragment()
+                    val toFragment = if (it.to == SPLASH_FRAGMENT) SplashFragment() else BlankFragment()
 
                     val transaction = supportFragmentManager.beginTransaction()
                     transaction.replace(
