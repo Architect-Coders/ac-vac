@@ -2,6 +2,7 @@ package com.example.vacunas.application
 
 import com.example.vacunas.helpers.AndroidResourceHelper
 import com.example.vacunas.ui.blank.BlankViewModel
+import com.example.vacunas.ui.blank.UserListViewModel
 import com.example.vacunas.ui.main.viewmodel.MainViewModel
 import com.example.vacunas.ui.splash.viewmodel.SplashViewModel
 import com.google.gson.Gson
@@ -19,6 +20,7 @@ val appModule = module {
     // Provide ViewModels
     viewModel { MainViewModel() }
     viewModel { SplashViewModel() }
+    viewModel { UserListViewModel() }
     viewModel { BlankViewModel() }
 }
 

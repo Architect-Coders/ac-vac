@@ -4,6 +4,6 @@ import android.content.Context
 import androidx.annotation.StringRes
 
 class AndroidResourceHelper(private val context: Context) {
-    fun getStringRes(@StringRes string: Int, vararg params: Any = emptyArray()): String =
+    fun getStringRes(@StringRes string: Int, vararg params: Any?): String =
         context.getString(string, *params)
 }

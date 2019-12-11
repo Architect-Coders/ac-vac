@@ -10,7 +10,9 @@ import com.example.vacunas.base.ui.visible
 import com.example.vacunas.ui.blank.BlankFragment
 import com.example.vacunas.ui.main.viewmodel.MainViewModel
 import com.example.vacunas.ui.splash.view.SplashFragment
+import com.example.vacunas.ui.user.UserListFragment
 import com.example.vacunas.utils.Constants.Screens.SPLASH_FRAGMENT
+import com.example.vacunas.utils.Constants.Screens.USER_LIST_FRAGMENT
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : BaseActivity<MainViewModel>() {
@@ -26,7 +28,11 @@ class MainActivity : BaseActivity<MainViewModel>() {
         viewModel.getViewCommand().observe(this, Observer {
             when (it) {
                 is BaseViewCommand.GoTo -> {
-                    val toFragment = if (it.to == SPLASH_FRAGMENT) SplashFragment() else BlankFragment()
+                    val toFragment = when (it.to) {
+                        SPLASH_FRAGMENT -> SplashFragment()
+                        USER_LIST_FRAGMENT -> UserListFragment()
+                        else -> BlankFragment()
+                    }
 
                     val transaction = supportFragmentManager.beginTransaction()
                     transaction.replace(

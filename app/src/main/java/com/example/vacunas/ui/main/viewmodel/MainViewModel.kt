@@ -1,5 +1,7 @@
 package com.example.vacunas.ui.main.viewmodel
 
+import android.util.Log
+import com.example.vacunas.R
 import com.example.vacunas.base.ui.BaseViewCommand
 import com.example.vacunas.base.ui.BaseViewModel
 import com.example.vacunas.utils.Constants
@@ -17,11 +19,13 @@ class MainViewModel : BaseViewModel() {
     init {
         _viewCommand.value = BaseViewCommand.GoTo(to = Constants.Screens.SPLASH_FRAGMENT)
 
+
+
         GlobalScope.launch {
             delay(DELAY_SPLASH)
             withContext(Dispatchers.Main) {
                 _viewCommand.value = BaseViewCommand.GoTo(
-                    to = Constants.Screens.BLANK_FRAGMENT
+                    to = Constants.Screens.USER_LIST_FRAGMENT
                 )
             }
         }

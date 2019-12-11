@@ -1,5 +1,7 @@
-package com.example.vacunas.ui.blank
+package com.example.vacunas.ui.user
 
 import com.example.vacunas.base.ui.BaseViewModel
 
-class BlankViewModel : BaseViewModel()
+class UserListViewModel : BaseViewModel() {
+
+}
