@@ -7,7 +7,7 @@
 
 
     <TextView
-        android:id="@+id/item_account_name"
+        android:id="@+id/item_user_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ellipsize="end"
@@ -19,5 +19,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:textSize="20sp"
-        android:text="SOY FULANO"/>
+        tools:text="SOY FULANO"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

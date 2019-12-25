@@ -2,7 +2,7 @@ package com.example.vacunas.application
 
 import com.example.vacunas.helpers.AndroidResourceHelper
 import com.example.vacunas.ui.blank.BlankViewModel
-import com.example.vacunas.ui.blank.UserListViewModel
+import com.example.vacunas.ui.user.UserListViewModel
 import com.example.vacunas.ui.main.viewmodel.MainViewModel
 import com.example.vacunas.ui.splash.viewmodel.SplashViewModel
 import com.google.gson.Gson
