@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="AlwaysShowAction,MenuTitle">
+    <item
+        android:id="@+id/menu_stop_antivaccine"
+        android:icon="@drawable/ic_stop_antivaccine"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/menu_vaccine_history"
+        android:icon="@drawable/ic_vaccine_history"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/menu_vaccine_info"
+        android:icon="@drawable/ic_vaccine_info"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/menu_vaccine_calendar"
+        android:icon="@drawable/ic_vaccine_calendar"
+        app:showAsAction="always" />
+</menu>

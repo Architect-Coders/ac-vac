@@ -10,9 +10,5 @@ class BlankFragment : BaseFragment<BlankViewModel>() {
 
     //region Override BaseFragment methods
     override fun getLayoutId(): Int = R.layout.fragment_blank
-
-    override fun setObservers() {}
-
-    override fun setupView() {}
     //endregion
 }

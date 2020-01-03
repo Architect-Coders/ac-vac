@@ -1,15 +1,9 @@
 package com.example.vacunas.ui.main.viewmodel
 
-import android.util.Log
-import com.example.vacunas.R
 import com.example.vacunas.base.ui.BaseViewCommand
 import com.example.vacunas.base.ui.BaseViewModel
 import com.example.vacunas.utils.Constants
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.*
 
 class MainViewModel : BaseViewModel() {
     companion object {
@@ -17,17 +11,18 @@ class MainViewModel : BaseViewModel() {
     }
 
     init {
-        _viewCommand.value = BaseViewCommand.GoTo(to = Constants.Screens.SPLASH_FRAGMENT)
-
-
-
         GlobalScope.launch {
             delay(DELAY_SPLASH)
             withContext(Dispatchers.Main) {
-                _viewCommand.value = BaseViewCommand.GoTo(
-                    to = Constants.Screens.USER_LIST_FRAGMENT
+                _viewCommand.value = BaseViewCommand.Navigate(
+                    actionId = Constants.NavActions.splash_to_userList,
+                    args = arrayOf("test1" to 1, "test2" to 2, "b" to null)   // TODO: QUITAR
                 )
             }
         }
+    }
+
+    fun onClickStopAntiVaccine() {
+
     }
 }

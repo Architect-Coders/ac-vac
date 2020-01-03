@@ -20,8 +20,6 @@ abstract class BaseFragment<T : BaseViewModel> : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         lifecycle.addObserver(viewModel)
-        setObservers()
-        setupView()
     }
 
     override fun onDestroy() {
@@ -31,8 +29,4 @@ abstract class BaseFragment<T : BaseViewModel> : Fragment() {
     //endregion
 
     abstract fun getLayoutId(): Int
-
-    abstract fun setObservers()
-
-    abstract fun setupView()
 }

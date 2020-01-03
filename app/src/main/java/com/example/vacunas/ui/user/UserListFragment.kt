@@ -1,5 +1,6 @@
 package com.example.vacunas.ui.user
 
+import android.os.Bundle
 import android.widget.LinearLayout
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -17,16 +18,22 @@ class UserListFragment : BaseFragment<UserListViewModel>() {
 
     private val listAdapter: UserListAdapter<UserListViewModel> by lazy { UserListAdapter(viewModel) }
 
-    //region Override BaseFragment methods
+    //region Lifecycle methods
     override fun getLayoutId(): Int = R.layout.fragment_list_users
 
-    override fun setObservers() {
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        setupView()
+        setObservers()
+    }
+
+    private fun setObservers() {
         viewModel.users.observe(this, Observer {
             listAdapter.submitList(it)
         })
     }
 
-    override fun setupView() {
+    private fun setupView() {
         userListView.apply {
             setHasFixedSize(true)
             addItemDecoration(DividerItemDecoration(context, LinearLayout.VERTICAL))

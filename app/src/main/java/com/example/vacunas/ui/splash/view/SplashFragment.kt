@@ -11,9 +11,5 @@ class SplashFragment : BaseFragment<SplashViewModel>() {
 
     //region Override BaseFragment methods
     override fun getLayoutId(): Int = R.layout.fragment_splash
-
-    override fun setObservers() {}
-
-    override fun setupView() {}
     //endregion
 }

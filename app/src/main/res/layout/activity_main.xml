@@ -12,23 +12,38 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-<!--        app:layout_scrollFlags="scroll|enterAlways|snap"-->
+        <!--        app:layout_scrollFlags="scroll|enterAlways|snap"-->
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/main_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:title="@string/app_name" />
+            android:layout_marginStart="@dimen/main_toolbar_marginHorizontal"
+            android:layout_marginEnd="@dimen/main_toolbar_marginHorizontal"
+            app:contentInsetEnd="0dp"
+            app:contentInsetStart="0dp">
 
+            <TextView
+                android:id="@+id/main_toolbar_title"
+                style="@style/H6FontTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/app_name"
+                tools:text="@tools:sample/lorem/random" />
+
+        </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
-<!--    android:name="androidx.navigation.fragment.NavHostFragment"-->
-<!--    app:defaultNavHost="true"-->
-
-    <FrameLayout
+    <fragment
         android:id="@+id/main_nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+        app:defaultNavHost="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:navGraph="@navigation/nav_main_graph" />
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/main_bottomAppBar"
@@ -37,7 +52,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         app:backgroundTint="#DD008577"
-        app:hideOnScroll="true" />
+        app:contentInsetEnd="0dp"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:hideOnScroll="true"
+        app:menu="@menu/menu_bottom_appbar" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/main_floatActionButton"

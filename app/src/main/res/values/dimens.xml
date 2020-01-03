@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- region Item User -->
+    <dimen name="main_toolbar_marginHorizontal">10dp</dimen>
+    <!-- endregion -->
+
+    <!-- region Item User -->
     <dimen name="item_user_photo_width">100dp</dimen>
     <dimen name="item_user_photo_marginTop">8dp</dimen>
     <dimen name="item_user_photo_marginStart">8dp</dimen>

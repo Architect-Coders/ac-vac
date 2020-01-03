@@ -11,7 +11,6 @@ abstract class BaseActivity<T : BaseViewModel> : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(getLayoutId())
         lifecycle.addObserver(viewModel)
-        setObservers()
     }
 
     override fun onDestroy() {
@@ -20,6 +19,4 @@ abstract class BaseActivity<T : BaseViewModel> : AppCompatActivity() {
     }
 
     abstract fun getLayoutId(): Int
-
-    abstract fun setObservers()
 }
