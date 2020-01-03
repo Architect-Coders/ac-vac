@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- https://material.io/design/typography/the-type-system.html#applying-the-type-scale -->
+    <style name="BaseFontTheme" />
+
+    <style name="H1FontTheme" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="autoSizeMaxTextSize">96sp</item>
+        <item name="autoSizeMinTextSize">80sp</item>
+    </style>
+
+    <style name="H2FontTheme" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="autoSizeMaxTextSize">60sp</item>
+        <item name="autoSizeMinTextSize">50sp</item>
+    </style>
+
+    <style name="H3FontTheme" parent="TextAppearance.MaterialComponents.Headline3">
+        <item name="autoSizeMaxTextSize">48sp</item>
+        <item name="autoSizeMinTextSize">40sp</item>
+    </style>
+
+    <style name="H4FontTheme" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="autoSizeMaxTextSize">34sp</item>
+        <item name="autoSizeMinTextSize">30sp</item>
+    </style>
+
+    <style name="H5FontTheme" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="autoSizeMaxTextSize">24sp</item>
+        <item name="autoSizeMinTextSize">20sp</item>
+    </style>
+
+    <style name="H6FontTheme" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="autoSizeMaxTextSize">20sp</item>
+        <item name="autoSizeMinTextSize">18sp</item>
+    </style>
+
+    <style name="Subtitle1FontTheme" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="autoSizeMaxTextSize">16sp</item>
+        <item name="autoSizeMinTextSize">14sp</item>
+    </style>
+
+    <style name="Subtitle2FontTheme" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="autoSizeMaxTextSize">14sp</item>
+        <item name="autoSizeMinTextSize">12sp</item>
+    </style>
+
+    <style name="Body1FontTheme" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="autoSizeMaxTextSize">16sp</item>
+        <item name="autoSizeMinTextSize">14sp</item>
+    </style>
+
+    <style name="Body2FontTheme" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="autoSizeMaxTextSize">14sp</item>
+        <item name="autoSizeMinTextSize">12sp</item>
+    </style>
+
+    <style name="CaptionFontTheme" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="autoSizeMaxTextSize">12sp</item>
+        <item name="autoSizeMinTextSize">10sp</item>
+    </style>
+
+    <style name="OverlineFontTheme" parent="TextAppearance.MaterialComponents.Overline">
+        <item name="autoSizeMaxTextSize">12sp</item>
+        <item name="autoSizeMinTextSize">10sp</item>
+    </style>
+
+    <style name="ButtonFontTheme" parent="TextAppearance.MaterialComponents.Button">
+        <item name="autoSizeMaxTextSize">14sp</item>
+        <item name="autoSizeMinTextSize">12sp</item>
+    </style>
+</resources>

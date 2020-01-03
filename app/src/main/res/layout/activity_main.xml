@@ -36,7 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        app:backgroundTint="#22000000"
+        app:backgroundTint="#DD008577"
         app:hideOnScroll="true" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

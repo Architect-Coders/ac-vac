@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- region Item User -->
+    <dimen name="item_user_photo_width">100dp</dimen>
+    <dimen name="item_user_photo_marginTop">8dp</dimen>
+    <dimen name="item_user_photo_marginStart">8dp</dimen>
+    <dimen name="item_user_name_marginStart">8dp</dimen>
+    <dimen name="item_user_name_marginEnd">8dp</dimen>
+    <dimen name="item_user_name_autosize_min">18sp</dimen>
+    <dimen name="item_user_birthdate_marginTop">8dp</dimen>
+    <dimen name="item_user_birthdate_marginEnd">@dimen/item_user_name_marginEnd</dimen>
+    <dimen name="item_user_blood_type_marginTop">4dp</dimen>
+    <dimen name="item_user_blood_type_value_marginStart">4dp</dimen>
+    <dimen name="item_user_blood_type_value_marginEnd">@dimen/item_user_name_marginEnd</dimen>
+    <dimen name="item_user_detail_icon_width">36dp</dimen>
+    <dimen name="item_user_detail_icon_marginEnd">@dimen/item_user_name_marginEnd</dimen>
+    <dimen name="item_user_detail_icon_marginTop">4dp</dimen>
+    <dimen name="item_user_detail_icon_marginBottom">8dp</dimen>
+    <!-- endregion -->
+</resources>

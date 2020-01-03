@@ -5,19 +5,98 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <ImageView
+        android:id="@+id/item_user_photo"
+        android:layout_width="@dimen/item_user_photo_width"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/item_user_photo_marginStart"
+        android:layout_marginTop="@dimen/item_user_photo_marginTop"
+        android:src="@drawable/user_photo"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/item_user_name"
+        style="@style/H4FontTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/item_user_name_marginStart"
+        android:layout_marginEnd="@dimen/item_user_name_marginEnd"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:maxLines="2"
+        android:textColor="@color/textColorPrimary"
+        android:textStyle="bold"
+        app:autoSizeTextType="uniform"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="@id/item_user_photo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/item_user_photo"
+        app:layout_constraintTop_toTopOf="@id/item_user_photo"
+        tools:text="@tools:sample/lorem/random" />
+
+    <TextView
+        android:id="@+id/item_user_birthdate"
+        style="@style/Body1FontTheme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/item_user_birthdate_marginTop"
+        android:layout_marginEnd="@dimen/item_user_birthdate_marginEnd"
         android:ellipsize="end"
-        android:maxLines="2"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
+        android:maxLines="1"
         app:layout_constrainedWidth="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@id/item_user_name"
+        app:layout_constraintTop_toBottomOf="@id/item_user_photo"
+        tools:text="@tools:sample/lorem/random" />
+
+    <TextView
+        android:id="@+id/item_user_blood_type"
+        style="@style/Body1FontTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/item_user_blood_type_marginTop"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/item_user_blood_type"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@id/item_user_blood_type_value"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/item_user_name"
+        app:layout_constraintTop_toBottomOf="@id/item_user_birthdate" />
+
+    <TextView
+        android:id="@+id/item_user_blood_type_value"
+        style="@style/Body1FontTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/item_user_blood_type_value_marginStart"
+        android:layout_marginEnd="@dimen/item_user_blood_type_value_marginEnd"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/item_user_blood_type"
+        app:layout_constraintTop_toTopOf="@id/item_user_blood_type"
+        tools:text="AB+" />
+
+    <ImageView
+        android:id="@+id/item_user_detail_icon"
+        android:layout_width="@dimen/item_user_detail_icon_width"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/item_user_detail_icon_marginTop"
+        android:layout_marginEnd="@dimen/item_user_detail_icon_marginEnd"
+        android:layout_marginBottom="@dimen/item_user_detail_icon_marginBottom"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_favorite"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:textSize="20sp"
-        tools:text="SOY FULANO"/>
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item_user_blood_type_value"
+        tools:ignore="ContentDescription" />
 </androidx.constraintlayout.widget.ConstraintLayout>

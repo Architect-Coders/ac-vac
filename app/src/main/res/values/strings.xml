@@ -5,8 +5,15 @@
     <string name="splash_title">SPLASH</string>
     <!--endregion-->
 
+    <!--region Item User-->
+    <string name="item_user_blood_type">Grupo sanguíneo:</string>
+    <!--endregion-->
 
 
 
+
+    <!--region Only for developers -->
     <string name="test">Interpolación = %1$s %2$s</string>
+    <string name="test_large">Lorem ipsum dolor sit amet consectetur adipiscing elit et ornare, quam urna tristique bibendum auctor nibh leo suspendisse, nisl eu pharetra vehicula placerat mattis dignissim nam. Felis mus convallis cum tincidunt suscipit nascetur ornare facilisi id fusce lacinia, accumsan quam varius vel auctor rutrum litora fringilla himenaeos tempor dui, et natoque urna lacus pellentesque libero nec morbi orci condimentum. Ut dis a nisl senectus molestie cursus etiam fringilla, quis semper primis nulla condimentum orci mattis dapibus proin, sodales placerat cum ultrices nascetur at vivamus.Sollicitudin dis egestas cras vestibulum augue pulvinar ornare tristique sociis id, sapien tincidunt vitae leo parturient luctus velit maecenas quisque, neque tortor viverra inceptos natoque habitasse morbi cubilia dictum. Consequat phasellus vel quam ornare magnis et sociis imperdiet praesent, pellentesque vestibulum vehicula laoreet magna nostra fusce cursus, purus inceptos montes etiam molestie vitae mattis turpis. Accumsan tortor porttitor cras dis nam molestie aptent rhoncus, viverra faucibus bibendum mattis pretium taciti massa libero, inceptos urna sem nostra sociis phasellus lobortis.</string>
+    <!--endregion-->
 </resources>
