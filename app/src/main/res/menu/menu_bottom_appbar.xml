@@ -12,6 +12,11 @@
         android:icon="@drawable/ic_vaccine_history"
         app:showAsAction="always" />
     <item
+        android:id="@+id/menu_null"
+        android:icon="@null"
+        android:enabled="false"
+        app:showAsAction="always" />
+    <item
         android:id="@+id/menu_vaccine_info"
         android:icon="@drawable/ic_vaccine_info"
         app:showAsAction="always" />

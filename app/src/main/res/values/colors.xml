@@ -6,6 +6,11 @@
 
     <color name="textColorPrimary">#000000</color>
 
+    <!--region Main -->
+    <color name="main_fab_src">@color/colorPrimaryDark</color>
+    <color name="main_fab_background">@color/colorAccent</color>
+    <!--endregion-->
+
     <!--region Splash-->
     <color name="splash_background">@color/colorPrimary</color>
     <!--endregion-->

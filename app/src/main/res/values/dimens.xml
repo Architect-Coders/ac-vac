@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- region Item User -->
+    <!-- region Toolbar -->
     <dimen name="main_toolbar_marginHorizontal">10dp</dimen>
+    <!-- endregion -->
+
+    <!-- region Bottom Navigation View -->
+    <dimen name="main_main_bottomNavigation_item_icon_size">30dp</dimen>
     <!-- endregion -->
 
     <!-- region Item User -->
