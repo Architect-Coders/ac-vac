@@ -10,7 +10,14 @@ class Constants {
     }
 
     object NavActions {
-        const val splash_to_userList = R.id.action_splashFragment_to_userListFragment
-        const val userList_to_blank = R.id.action_userListFragment_to_blankFragment
+        const val SPLASH_TO_USERLIST = R.id.action_splashFragment_to_userListFragment
+        const val USERLIST_TO_BLANK = R.id.action_userListFragment_to_blankFragment
+    }
+
+    object MenuItemType {
+        const val STOP_ANTIVACCINE = R.id.menu_stop_antivaccine
+        const val VACCINE_CALENDAR = R.id.menu_vaccine_calendar
+        const val VACCINE_INFO = R.id.menu_vaccine_info
+        const val VACCINE_HISTORY = R.id.menu_vaccine_history
     }
 }

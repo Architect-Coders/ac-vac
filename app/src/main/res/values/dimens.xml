@@ -5,7 +5,7 @@
     <!-- endregion -->
 
     <!-- region Bottom Navigation View -->
-    <dimen name="main_main_bottomNavigation_item_icon_size">30dp</dimen>
+    <dimen name="main_main_bottomNavigation_item_icon_size">24dp</dimen>
     <!-- endregion -->
 
     <!-- region Item User -->

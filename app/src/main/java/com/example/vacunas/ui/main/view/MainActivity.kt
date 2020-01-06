@@ -12,6 +12,7 @@ import com.example.vacunas.base.ui.BaseActivity
 import com.example.vacunas.base.ui.BaseViewCommand
 import com.example.vacunas.base.ui.bindView
 import com.example.vacunas.base.ui.visible
+import com.example.vacunas.data.factories.MenuItemFactory
 import com.example.vacunas.ui.main.viewmodel.MainViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -35,29 +36,9 @@ class MainActivity : BaseActivity<MainViewModel>() {
     }
 
     private fun configureBottomAppBar() {
-//        if (bottomAppBar.childCount > 0) {
-//            val actionMenuView = bottomAppBar.getChildAt(0) as ActionMenuView
-//            actionMenuView.layoutParams.width = android.widget.ActionMenuView.LayoutParams.MATCH_PARENT
-//        }
-
-        // TODO: Aplicar patrón Command?
         bottomNavigation.setOnNavigationItemSelectedListener {
-            when (it.itemId) {
-                R.id.menu_stop_antivaccine -> {
-                    viewModel.onClickStopAntiVaccine()
-                    true
-                }
-                R.id.menu_vaccine_history -> {
-                    true
-                }
-                R.id.menu_vaccine_info -> {
-                    true
-                }
-                R.id.menu_vaccine_calendar -> {
-                    true
-                }
-                else -> false
-            }
+            MenuItemFactory.createMenuItem(it.itemId).onClick(viewModel)
+            true
         }
     }
 
