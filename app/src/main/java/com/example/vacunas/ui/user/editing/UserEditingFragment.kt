@@ -1,13 +1,16 @@
-package com.example.vacunas.ui.user.editting
+package com.example.vacunas.ui.user.editing
 
-import androidx.lifecycle.ViewModel
+import com.example.vacunas.R
 import com.example.vacunas.base.ui.BaseFragment
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class UserEdittingFragment : BaseFragment<UserEdittingViewModel> {
+class UserEditingFragment : BaseFragment<UserEditingViewModel>() {
 
-    override val viewModel: UserEdittingViewModel by viewModel()
+    override val viewModel: UserEditingViewModel by viewModel()
 
-    override fun getLayoutId(): Int {
+    //region Lifecycle methods
+    override fun getLayoutId(): Int = R.layout.fragment_edit_user
 
-    }
+
+    //endregion
 }

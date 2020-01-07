@@ -5,11 +5,30 @@
     <string name="splash_title">SPLASH</string>
     <!--endregion-->
 
-    <!--region Item User-->
-    <string name="item_user_blood_type">Grupo sanguíneo:</string>
+    <!--region User List & Editing-->
+    <string name="user_list_item_blood_type">Grupo sanguíneo:</string>
+
+
+    <string name="user_editing_bloodtype_prompt">Elige tu grupo sanguíneo</string>
+    <string-array name="user_editing_bloodtype_array">
+        <item>A_POS</item>
+        <item>A_NEG</item>
+        <item>B_POS</item>
+        <item>B_NEG</item>
+        <item>AB_POS</item>
+        <item>AB_NEG</item>
+        <item>ZERO_POS</item>
+        <item>ZERO_NEG</item>
+    </string-array>
+    <string name="user_editing_region_prompt">Elige tu Comunidad</string>
+    <string-array name="user_editing_region_array">
+        <item>Andalucía</item>
+        <item>Aragón</item>
+        <item>Asturias</item>
+        <item>Cantabria</item>
+        <!-- TODO -->
+    </string-array>
     <!--endregion-->
-
-
 
 
     <!--region Only for developers -->

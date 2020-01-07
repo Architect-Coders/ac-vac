@@ -1,4 +1,4 @@
-package com.example.vacunas.ui.user
+package com.example.vacunas.ui.user.list
 
 import android.os.Bundle
 import android.widget.LinearLayout
@@ -16,7 +16,11 @@ class UserListFragment : BaseFragment<UserListViewModel>() {
 
     private val userListView: RecyclerView by bindView(R.id.fragment_user_list_recycler)
 
-    private val listAdapter: UserListAdapter<UserListViewModel> by lazy { UserListAdapter(viewModel) }
+    private val listAdapter: UserListAdapter<UserListViewModel> by lazy {
+        UserListAdapter(
+            viewModel
+        )
+    }
 
     //region Lifecycle methods
     override fun getLayoutId(): Int = R.layout.fragment_list_users

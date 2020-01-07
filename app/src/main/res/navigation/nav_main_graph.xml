@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/userListFragment"
-        android:name="com.example.vacunas.ui.user.UserListFragment"
+        android:name="com.example.vacunas.ui.user.list.UserListFragment"
         android:label="fragment_list_users"
         tools:layout="@layout/fragment_list_users">
         <action

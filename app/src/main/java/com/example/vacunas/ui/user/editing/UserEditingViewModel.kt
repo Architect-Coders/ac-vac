@@ -1,6 +1,6 @@
-package com.example.vacunas.ui.user.editting
+package com.example.vacunas.ui.user.editing
 
 import com.example.vacunas.base.ui.BaseViewModel
 
-class UserEdittingViewModel: BaseViewModel() {
+class UserEditingViewModel: BaseViewModel() {
 }

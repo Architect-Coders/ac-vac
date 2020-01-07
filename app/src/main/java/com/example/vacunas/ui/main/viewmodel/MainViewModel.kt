@@ -23,6 +23,10 @@ class MainViewModel : BaseViewModel(), MenuItemFactory.OnMenuItemSelected {
         }
     }
 
+    fun onClickFloatingActionButton() {
+
+    }
+
     //region Override OnMenuItemSelected
     override fun onMenuItemSelected(menuItemType: MenuItemFactory.MenuItemType) {
 

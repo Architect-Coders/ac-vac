@@ -1,15 +1,17 @@
-package com.example.vacunas.data.dao
+package com.example.vacunas.data.repository.local.bbdd.dao
 
+import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import com.example.vacunas.data.model.User
 
-interface UserDAO {
+@Dao
+interface UserDao {
     @Query("SELECT * FROM users")
     suspend fun getAll(): List<User>
 
-    @Query("SELECT * FROM users WHERE userId == userId")
+    @Query("SELECT * FROM users WHERE userId == :userId")
     suspend fun findByName(userId: Int): User
 
     @Insert

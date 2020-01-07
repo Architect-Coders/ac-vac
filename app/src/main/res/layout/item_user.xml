@@ -62,7 +62,7 @@
         android:layout_marginTop="@dimen/item_user_blood_type_marginTop"
         android:ellipsize="end"
         android:maxLines="1"
-        android:text="@string/item_user_blood_type"
+        android:text="@string/user_list_item_blood_type"
         app:layout_constrainedWidth="true"
         app:layout_constraintEnd_toStartOf="@id/item_user_blood_type_value"
         app:layout_constraintHorizontal_bias="0"

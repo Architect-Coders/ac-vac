@@ -15,6 +15,7 @@ import com.example.vacunas.base.ui.visible
 import com.example.vacunas.data.factories.MenuItemFactory
 import com.example.vacunas.ui.main.viewmodel.MainViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : BaseActivity<MainViewModel>() {
@@ -23,6 +24,7 @@ class MainActivity : BaseActivity<MainViewModel>() {
 
     private val loadingLayout: FrameLayout by bindView(R.id.main_loading)
     private val bottomNavigation: BottomNavigationView by bindView(R.id.main_bottomNavigation)
+    private val floatActionButton: FloatingActionButton by bindView(R.id.main_floatActionButton)
 
     private val navController: NavController by lazy { findNavController(R.id.main_nav_host_fragment) }
 
@@ -33,6 +35,7 @@ class MainActivity : BaseActivity<MainViewModel>() {
         super.onCreate(savedInstanceState)
         configureBottomAppBar()
         setObservers()
+        setClickListeners()
     }
 
     private fun configureBottomAppBar() {
@@ -48,6 +51,10 @@ class MainActivity : BaseActivity<MainViewModel>() {
                 is BaseViewCommand.Navigate -> navigate(it.actionId, it.args)
             }
         })
+    }
+
+    private fun setClickListeners() {
+        floatActionButton.setOnClickListener { viewModel.onClickFloatingActionButton() }
     }
     //endregion
 
