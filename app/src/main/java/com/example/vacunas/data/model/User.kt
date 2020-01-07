@@ -4,9 +4,6 @@ import androidx.room.*
 
 @Entity(tableName = "users")
 data class User(
-    @PrimaryKey(autoGenerate = true)
-    val userId: Int = -1,
-
     @ColumnInfo(name = "name")
     val name: String = "",
 
@@ -15,9 +12,12 @@ data class User(
 
     @ColumnInfo(name = "bloodType")
     @TypeConverters(BloodType.Converters::class)
-    val bloodType: BloodType = BloodType.UNKNWON,
+    val bloodType: BloodType = BloodType.UNKNOWN,
 
     @ColumnInfo(name = "region")
     @TypeConverters(SpainRegion.Converters::class)
-    val region: SpainRegion = SpainRegion.UNKNWON
-)
+    val region: SpainRegion = SpainRegion.UNKNOWN
+) {
+    @PrimaryKey(autoGenerate = true)
+    var userId: Int = -1
+}

@@ -1,4 +1,4 @@
-package com.example.vacunas.data.repository.local.bbdd.dao
+package com.example.vacunas.data.repository.local.db.daos
 
 import androidx.room.Dao
 import androidx.room.Delete

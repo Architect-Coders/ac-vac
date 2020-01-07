@@ -3,7 +3,7 @@ package com.example.vacunas.application
 import android.content.Context
 import androidx.room.Room
 import com.example.vacunas.BuildConfig
-import com.example.vacunas.data.repository.local.bbdd.AppDatabase
+import com.example.vacunas.data.repository.local.db.AppDatabase
 import com.example.vacunas.helpers.AndroidResourceHelper
 import com.example.vacunas.ui.blank.BlankViewModel
 import com.example.vacunas.ui.main.viewmodel.MainViewModel
