@@ -15,8 +15,8 @@ interface UserDao {
     suspend fun findByName(userId: Int): User
 
     @Insert
-    fun insert(user: User)
+    suspend fun insert(user: User): Long
 
     @Delete
-    fun delete(user: User)
+    suspend fun delete(user: User)
 }

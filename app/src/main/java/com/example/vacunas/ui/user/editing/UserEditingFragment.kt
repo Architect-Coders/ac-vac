@@ -11,6 +11,8 @@ import com.example.vacunas.R
 import com.example.vacunas.base.ui.BaseFragment
 import com.example.vacunas.base.ui.BaseViewCommand
 import com.example.vacunas.base.ui.content
+import com.example.vacunas.base.ui.toast
+import com.example.vacunas.base.utils.toInt
 import com.example.vacunas.ui.main.view.MainActivity
 import kotlinx.android.synthetic.main.fragment_editing_user.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -51,6 +53,7 @@ class UserEditingFragment : BaseFragment<UserEditingViewModel>() {
             when (it) {
                 is BaseViewCommand.OpenDatePickerDialog -> openPickerDialog()
                 is BaseViewCommand.BackNavigate -> findNavController().navigateUp()
+                is BaseViewCommand.ShowToast -> context?.toast(it.msg, it.largeDuration.toInt())
             }
         })
 
@@ -102,9 +105,8 @@ class UserEditingFragment : BaseFragment<UserEditingViewModel>() {
             override fun onNothingSelected(parent: AdapterView<*>) {}
         }
 
-        userCancelOption.setOnClickListener {
-            viewModel.onCancelClicked()
-        }
+        userCancelOption.setOnClickListener { viewModel.onCancelClicked() }
+        userOkOption.setOnClickListener { viewModel.onOkClicked() }
     }
 
     private fun openPickerDialog() {

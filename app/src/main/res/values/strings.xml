@@ -6,12 +6,15 @@
     <!--endregion-->
 
     <!--region User List & Editing-->
+    <string name="user_list_empty_message">No hay usuarios en la base de datos</string>
+    <string name="user_list_error_get_db">Ha ocurrido un error: %1$s</string>
     <string name="user_list_item_blood_type">Grupo sanguíneo:</string>
 
     <string name="user_editing_name_hint">Nombre</string>
     <string name="user_editing_birthdate_hint">Fecha de nacimiento</string>
     <string name="user_editing_bloodtype_prompt">Elige tu grupo sanguíneo:</string>
     <string-array name="user_editing_bloodtype_array">
+        <item> </item>
         <item>A+</item>
         <item>A-</item>
         <item>B+</item>
@@ -23,14 +26,19 @@
     </string-array>
     <string name="user_editing_region_prompt">Elige tu Comunidad</string>
     <string-array name="user_editing_region_array">
+        <item> </item>
         <item>Andalucía</item>
         <item>Aragón</item>
         <item>Asturias</item>
         <item>Cantabria</item>
         <!-- TODO -->
     </string-array>
-    <string name="user_editing_cancel_option" >Cancelar</string>
-    <string name="user_editing_ok_option" >Aceptar</string>
+    <string name="user_editing_cancel_option">Cancelar</string>
+    <string name="user_editing_ok_option">Aceptar</string>
+
+    <string name="user_editing_error_username_empty">El nombre del usuario no puede estar en blanco</string>
+    <string name="user_editing_error_birthdate_empty">La fecha de nacimiento no puede estar en blanco</string>
+    <string name="user_editing_error_insert_db">Ha ocurrido un error: %1$s</string>
     <!--endregion-->
 
 

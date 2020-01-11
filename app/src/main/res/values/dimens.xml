@@ -9,6 +9,10 @@
     <dimen name="main_main_bottomNavigation_item_icon_size">24dp</dimen>
     <!-- endregion -->
 
+    <!-- region List User -->
+    <dimen name="list_user_msg_marginHorizontal">24dp</dimen>
+    <!-- endregion -->
+
     <!-- region Item User -->
     <dimen name="item_user_photo_width">100dp</dimen>
     <dimen name="item_user_photo_marginTop">8dp</dimen>
@@ -45,18 +49,5 @@
     <dimen name="editing_user_cancel_button_marginTop">24dp</dimen>
     <dimen name="editing_user_cancel_button_marginBottom">12dp</dimen>
     <dimen name="editing_user_ok_button_marginEnd">@dimen/editing_user_cancel_button_marginStart</dimen>
-
-
-    <dimen name="editing_user_name_marginStart">8dp</dimen>
-    <dimen name="editing_user_name_marginEnd">8dp</dimen>
-    <dimen name="editing_user_name_autosize_min">18sp</dimen>
-    <dimen name="editing_user_birthdate_marginEnd">@dimen/item_user_name_marginEnd</dimen>
-
-    <dimen name="editing_user_blood_type_value_marginStart">4dp</dimen>
-    <dimen name="editing_user_blood_type_value_marginEnd">@dimen/item_user_name_marginEnd</dimen>
-
-    <dimen name="editing_user_detail_icon_marginEnd">@dimen/item_user_name_marginEnd</dimen>
-    <dimen name="editing_user_detail_icon_marginTop">4dp</dimen>
-    <dimen name="editing_user_detail_icon_marginBottom">8dp</dimen>
     <!-- endregion -->
 </resources>

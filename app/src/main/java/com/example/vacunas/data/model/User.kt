@@ -1,6 +1,9 @@
 package com.example.vacunas.data.model
 
-import androidx.room.*
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import androidx.room.TypeConverters
 
 @Entity(tableName = "users")
 data class User(
@@ -19,5 +22,5 @@ data class User(
     val region: SpainRegion = SpainRegion.UNKNOWN
 ) {
     @PrimaryKey(autoGenerate = true)
-    var userId: Int = -1
+    var userId: Int = 0
 }

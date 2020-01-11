@@ -1,18 +1,42 @@
 package com.example.vacunas.ui.user.editing
 
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.OnLifecycleEvent
+import androidx.lifecycle.*
+import com.example.vacunas.R
 import com.example.vacunas.base.ui.BaseViewCommand
 import com.example.vacunas.base.ui.BaseViewModel
+import com.example.vacunas.data.model.BloodType
+import com.example.vacunas.data.model.SpainRegion
+import com.example.vacunas.data.model.User
+import com.example.vacunas.data.repository.RepositoryFactory
+import com.example.vacunas.data.repository.utils.Response
+import kotlinx.coroutines.launch
+import org.koin.core.inject
+import java.text.SimpleDateFormat
+import java.util.*
+
 
 class UserEditingViewModel : BaseViewModel() {
 
+    private val repository: RepositoryFactory by inject()
+
+    companion object {
+        const val DATE_FORMAT = "dd/MM/yyyy"
+    }
+
+    private lateinit var userName: String
+    private var userBirthDate = MutableLiveData<Long>()
+    private var userBloodType: BloodType = BloodType.UNKNOWN
+    private var userRegion: SpainRegion = SpainRegion.UNKNOWN
+
     val visibleBottomAppBar = MutableLiveData<Boolean>()
     val visibleFabButton = MutableLiveData<Boolean>()
-    val birthDate = MutableLiveData<String>()
+    val birthDate: LiveData<String> = Transformations.map(userBirthDate) {
+        val dateFormat = SimpleDateFormat(DATE_FORMAT, androidResourceHelper.getLocale())
+        dateFormat.format(Date(it))
+    }
 
 
+    //region Lifecycle methods
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
     fun onStart() {
         hideBottomViews()
@@ -22,9 +46,10 @@ class UserEditingViewModel : BaseViewModel() {
         visibleBottomAppBar.value = false
         visibleFabButton.value = false
     }
+    //endregion
 
     fun onAfterNameTextChanged(text: CharSequence) {
-
+        userName = text.toString()
     }
 
     fun onBirthdateClicked() {
@@ -32,15 +57,15 @@ class UserEditingViewModel : BaseViewModel() {
     }
 
     fun onBirthdateSelected(time: Long) {
-        birthDate.value = time.toString()
+        userBirthDate.value = time
     }
 
     fun onBloodTypeSelected(position: Int) {
-        println(">>> BLOOD POSITION SELECTED = $position")
+        userBloodType = BloodType.values()[position]
     }
 
     fun onRegionSelected(position: Int) {
-        println(">>> REGION POSITION SELECTED = $position")
+        userRegion = SpainRegion.values()[position]
     }
 
     fun onCancelClicked() {
@@ -48,6 +73,42 @@ class UserEditingViewModel : BaseViewModel() {
     }
 
     fun onOkClicked() {
+        when {
+            !::userName.isInitialized || userName.isBlank() -> {
+                _viewCommand.value = BaseViewCommand
+                    .ShowToast(
+                        androidResourceHelper.getStringRes(R.string.user_editing_error_username_empty)
+                    )
+            }
+            userBirthDate.value == null -> {
+                _viewCommand.value = BaseViewCommand
+                    .ShowToast(
+                        androidResourceHelper.getStringRes(R.string.user_editing_error_birthdate_empty)
+                    )
+            }
+            else -> {
+                saveUser(User(userName, userBirthDate.value!!, userBloodType, userRegion))
+            }
+        }
+    }
 
+    private fun saveUser(user: User) {
+        viewModelScope.launch {
+            when (val response = repository.saveUser(user)) {
+                is Response.Success -> {
+                    println(">>> ID insertado: ${response.data}")
+                    _viewCommand.value = BaseViewCommand.BackNavigate
+                }
+                is Response.Error -> {
+                    _viewCommand.value = BaseViewCommand
+                        .ShowToast(
+                            androidResourceHelper.getStringRes(
+                                R.string.user_editing_error_insert_db,
+                                response.message ?: "unknown"
+                            )
+                        )
+                }
+            }
+        }
     }
 }
