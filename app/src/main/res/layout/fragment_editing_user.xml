@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/userPhoto"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/editing_user_photo_height"
+            android:background="@color/user_editing_photo_background"
+            android:paddingTop="@dimen/editing_user_photo_paddingVertical"
+            android:paddingBottom="@dimen/editing_user_photo_paddingVertical"
+            android:scaleType="fitCenter"
+            android:src="@drawable/user_photo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/userPhotoIcon"
+            android:layout_width="@dimen/editing_user_camera_icon_width"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/editing_user_camera_icon_marginEnd"
+            android:background="@drawable/circle"
+            android:scaleType="centerInside"
+            app:backgroundTint="@color/user_editing_photo_icon_background"
+            app:layout_constraintBottom_toBottomOf="@id/userPhoto"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/userPhoto"
+            app:layout_constraintTop_toBottomOf="@id/userPhoto"
+            app:srcCompat="@drawable/ic_photo_camera"
+            tools:ignore="ContentDescription" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/userNameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/editing_user_name_marginHorizontal"
+            android:layout_marginEnd="@dimen/editing_user_name_marginHorizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/userPhotoIcon">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/userNameInput"
+                style="@style/Body1FontTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/user_editing_name_hint"
+                android:inputType="text"
+                android:singleLine="true" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/userBirthdateLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/editing_user_birthdate_marginHorizontal"
+            android:layout_marginTop="@dimen/editing_user_birthdate_marginTop"
+            android:layout_marginEnd="@dimen/editing_user_birthdate_marginHorizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/userNameLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/userBirthdateInput"
+                style="@style/Body1FontTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:hint="@string/user_editing_birthdate_hint"
+                android:singleLine="true" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/userBloodTypeText"
+            style="@style/Body1FontTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/editing_user_blood_type_marginHorizontal"
+            android:layout_marginTop="@dimen/editing_user_blood_type_marginTop"
+            android:layout_marginEnd="@dimen/editing_user_blood_type_marginHorizontal"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@string/user_editing_bloodtype_prompt"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toStartOf="@id/userBloodTypeInput"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/userBirthdateLayout"
+            tools:text="@tools:sample/lorem/random" />
+
+        <Spinner
+            android:id="@+id/userBloodTypeInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/user_editing_bloodtype_array"
+            android:prompt="@string/user_editing_bloodtype_prompt"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="@id/userBloodTypeText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@+id/userBloodTypeText"
+            app:layout_constraintTop_toTopOf="@id/userBloodTypeText" />
+
+        <TextView
+            android:id="@+id/userRegionText"
+            style="@style/Body1FontTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/editing_user_region_marginHorizontal"
+            android:layout_marginTop="@dimen/editing_user_region_marginTop"
+            android:layout_marginEnd="@dimen/editing_user_region_marginHorizontal"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@string/user_editing_region_prompt"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toStartOf="@id/userRegionInput"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/userBloodTypeText"
+            tools:text="@tools:sample/lorem/random" />
+
+        <Spinner
+            android:id="@+id/userRegionInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/user_editing_region_array"
+            android:prompt="@string/user_editing_region_prompt"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="@id/userRegionText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@+id/userRegionText"
+            app:layout_constraintTop_toTopOf="@id/userRegionText" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/userCancelOption"
+            style="@style/ButtonFontTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/editing_user_cancel_button_marginStart"
+            android:layout_marginTop="@dimen/editing_user_cancel_button_marginTop"
+            android:layout_marginBottom="@dimen/editing_user_cancel_button_marginBottom"
+            android:text="@string/user_editing_cancel_option"
+            android:textColor="@color/textColorSecondary"
+            app:backgroundTint="@color/colorPrimaryDark"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/userOkOption"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/userRegionText"
+            app:layout_constraintVertical_bias="1" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/userOkOption"
+            style="@style/ButtonFontTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/editing_user_ok_button_marginEnd"
+            android:text="@string/user_editing_ok_option"
+            android:textColor="@color/textColorSecondary"
+            app:backgroundTint="@color/colorPrimaryDark"
+            app:layout_constraintBottom_toBottomOf="@id/userCancelOption"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/userCancelOption"
+            app:layout_constraintTop_toTopOf="@id/userCancelOption" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

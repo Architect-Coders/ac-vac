@@ -2,6 +2,7 @@
 <resources>
     <!-- region Toolbar -->
     <dimen name="main_toolbar_marginHorizontal">10dp</dimen>
+    <dimen name="main_bottomAppBar_marginHorizontal">?attr/actionBarSize</dimen>
     <!-- endregion -->
 
     <!-- region Bottom Navigation View -->
@@ -24,5 +25,38 @@
     <dimen name="item_user_detail_icon_marginEnd">@dimen/item_user_name_marginEnd</dimen>
     <dimen name="item_user_detail_icon_marginTop">4dp</dimen>
     <dimen name="item_user_detail_icon_marginBottom">8dp</dimen>
+    <!-- endregion -->
+
+    <!-- region Editing User -->
+    <dimen name="editing_user_photo_height">250dp</dimen>
+    <dimen name="editing_user_photo_paddingVertical">12dp</dimen>
+    <dimen name="editing_user_photo_marginTop">8dp</dimen>
+    <dimen name="editing_user_camera_icon_width">50dp</dimen>
+    <dimen name="editing_user_camera_icon_marginEnd">12dp</dimen>
+    <dimen name="editing_user_common_marginHorizontal">12dp</dimen>
+    <dimen name="editing_user_name_marginHorizontal">@dimen/editing_user_common_marginHorizontal</dimen>
+    <dimen name="editing_user_birthdate_marginHorizontal">@dimen/editing_user_common_marginHorizontal</dimen>
+    <dimen name="editing_user_birthdate_marginTop">8dp</dimen>
+    <dimen name="editing_user_blood_type_marginHorizontal">@dimen/editing_user_common_marginHorizontal</dimen>
+    <dimen name="editing_user_blood_type_marginTop">20dp</dimen>
+    <dimen name="editing_user_region_marginHorizontal">@dimen/editing_user_common_marginHorizontal</dimen>
+    <dimen name="editing_user_region_marginTop">20dp</dimen>
+    <dimen name="editing_user_cancel_button_marginStart">24dp</dimen>
+    <dimen name="editing_user_cancel_button_marginTop">24dp</dimen>
+    <dimen name="editing_user_cancel_button_marginBottom">12dp</dimen>
+    <dimen name="editing_user_ok_button_marginEnd">@dimen/editing_user_cancel_button_marginStart</dimen>
+
+
+    <dimen name="editing_user_name_marginStart">8dp</dimen>
+    <dimen name="editing_user_name_marginEnd">8dp</dimen>
+    <dimen name="editing_user_name_autosize_min">18sp</dimen>
+    <dimen name="editing_user_birthdate_marginEnd">@dimen/item_user_name_marginEnd</dimen>
+
+    <dimen name="editing_user_blood_type_value_marginStart">4dp</dimen>
+    <dimen name="editing_user_blood_type_value_marginEnd">@dimen/item_user_name_marginEnd</dimen>
+
+    <dimen name="editing_user_detail_icon_marginEnd">@dimen/item_user_name_marginEnd</dimen>
+    <dimen name="editing_user_detail_icon_marginTop">4dp</dimen>
+    <dimen name="editing_user_detail_icon_marginBottom">8dp</dimen>
     <!-- endregion -->
 </resources>

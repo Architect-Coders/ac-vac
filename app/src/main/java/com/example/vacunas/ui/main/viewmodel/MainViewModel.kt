@@ -24,7 +24,9 @@ class MainViewModel : BaseViewModel(), MenuItemFactory.OnMenuItemSelected {
     }
 
     fun onClickFloatingActionButton() {
-
+        _viewCommand.value = BaseViewCommand.Navigate(
+            actionId = Constants.NavActions.USERLIST_TO_USEREDITING
+        )
     }
 
     //region Override OnMenuItemSelected

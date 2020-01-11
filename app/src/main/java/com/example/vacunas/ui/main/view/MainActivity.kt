@@ -1,7 +1,6 @@
 package com.example.vacunas.ui.main.view
 
 import android.os.Bundle
-import android.widget.FrameLayout
 import androidx.annotation.IdRes
 import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
@@ -10,23 +9,18 @@ import androidx.navigation.findNavController
 import com.example.vacunas.R
 import com.example.vacunas.base.ui.BaseActivity
 import com.example.vacunas.base.ui.BaseViewCommand
-import com.example.vacunas.base.ui.bindView
 import com.example.vacunas.base.ui.visible
 import com.example.vacunas.data.factories.MenuItemFactory
 import com.example.vacunas.ui.main.viewmodel.MainViewModel
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.example.vacunas.utils.UiInterface
+import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MainActivity : BaseActivity<MainViewModel>() {
+class MainActivity : BaseActivity<MainViewModel>(), UiInterface.MainActivityContract {
 
     override val viewModel: MainViewModel by viewModel()
 
-    private val loadingLayout: FrameLayout by bindView(R.id.main_loading)
-    private val bottomNavigation: BottomNavigationView by bindView(R.id.main_bottomNavigation)
-    private val floatActionButton: FloatingActionButton by bindView(R.id.main_floatActionButton)
-
-    private val navController: NavController by lazy { findNavController(R.id.main_nav_host_fragment) }
+    private val navController: NavController by lazy { findNavController(R.id.navHostFragment) }
 
     //region Lifecycle & methods
     override fun getLayoutId(): Int = R.layout.activity_main
@@ -62,7 +56,17 @@ class MainActivity : BaseActivity<MainViewModel>() {
         navController.navigate(actionId, bundleOf(*args))
     }
 
+    //region Override UiInterface.MainActivityContract methods
+    override fun toggleBottomAppBar(visible: Boolean) {
+        bottomAppBar.visible = visible
+    }
+
+    override fun toggleFabButton(visible: Boolean) {
+        floatActionButton.visible = visible
+    }
+    //endregion
+
     fun toggleLoading(visible: Boolean) {
-        loadingLayout.visible = visible
+        loadingView.visible = visible
     }
 }

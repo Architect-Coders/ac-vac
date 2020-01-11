@@ -32,10 +32,17 @@
             app:exitAnim="@anim/fade_exit"
             app:popEnterAnim="@anim/fade_enter"
             app:popExitAnim="@anim/translate_exit" />
+        <action
+            android:id="@+id/action_userListFragment_to_userEditingFragment"
+            app:destination="@id/userEditingFragment" />
     </fragment>
     <fragment
         android:id="@+id/blankFragment"
         android:name="com.example.vacunas.ui.blank.BlankFragment"
         android:label="fragment_blank"
         tools:layout="@layout/fragment_blank" />
+    <fragment
+        android:id="@+id/userEditingFragment"
+        android:name="com.example.vacunas.ui.user.editing.UserEditingFragment"
+        android:label="UserEditingFragment"/>
 </navigation>

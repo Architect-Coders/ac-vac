@@ -6,11 +6,13 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vacunas.R
 import com.example.vacunas.base.ui.BaseListAdapter
-import com.example.vacunas.base.ui.bindView
 import com.example.vacunas.data.model.User
+import kotlinx.android.synthetic.main.item_user.*
+import kotlinx.android.extensions.LayoutContainer
 
 class UserListAdapter<T : UserListAdapter.Listener>(listener: T) :
-    BaseListAdapter<User, UserViewHolder, T>(listener,
+    BaseListAdapter<User, UserViewHolder, T>(
+        listener,
         UserItemDiffCallback()
     ) {
 
@@ -28,10 +30,10 @@ class UserItemDiffCallback : DiffUtil.ItemCallback<User>() { //TODO: Revisar
     override fun areContentsTheSame(oldItem: User, newItem: User): Boolean = oldItem == newItem
 }
 
-class UserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView.rootView) {
-    private val name: TextView by bindView(R.id.item_user_name)
+class UserViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView),
+    LayoutContainer {
 
     fun setName(value: String) {
-        name.text = value
+        userNameText.text = value
     }
 }

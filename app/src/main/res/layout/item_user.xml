@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/item_user_photo"
+        android:id="@+id/userPhotoView"
         android:layout_width="@dimen/item_user_photo_width"
         android:layout_height="0dp"
         android:layout_marginStart="@dimen/item_user_photo_marginStart"
@@ -18,7 +18,7 @@
         tools:ignore="ContentDescription" />
 
     <TextView
-        android:id="@+id/item_user_name"
+        android:id="@+id/userNameText"
         style="@style/H4FontTheme"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
@@ -31,15 +31,15 @@
         android:textStyle="bold"
         app:autoSizeTextType="uniform"
         app:layout_constrainedWidth="true"
-        app:layout_constraintBottom_toBottomOf="@id/item_user_photo"
+        app:layout_constraintBottom_toBottomOf="@id/userPhotoView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toEndOf="@id/item_user_photo"
-        app:layout_constraintTop_toTopOf="@id/item_user_photo"
+        app:layout_constraintStart_toEndOf="@id/userPhotoView"
+        app:layout_constraintTop_toTopOf="@id/userPhotoView"
         tools:text="@tools:sample/lorem/random" />
 
     <TextView
-        android:id="@+id/item_user_birthdate"
+        android:id="@+id/userBirthDateText"
         style="@style/Body1FontTheme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -50,12 +50,12 @@
         app:layout_constrainedWidth="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="@id/item_user_name"
-        app:layout_constraintTop_toBottomOf="@id/item_user_photo"
+        app:layout_constraintStart_toStartOf="@id/userNameText"
+        app:layout_constraintTop_toBottomOf="@id/userPhotoView"
         tools:text="@tools:sample/lorem/random" />
 
     <TextView
-        android:id="@+id/item_user_blood_type"
+        android:id="@+id/userBloodTypeText"
         style="@style/Body1FontTheme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -64,14 +64,14 @@
         android:maxLines="1"
         android:text="@string/user_list_item_blood_type"
         app:layout_constrainedWidth="true"
-        app:layout_constraintEnd_toStartOf="@id/item_user_blood_type_value"
+        app:layout_constraintEnd_toStartOf="@id/userBloodTypeValue"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="@id/item_user_name"
-        app:layout_constraintTop_toBottomOf="@id/item_user_birthdate" />
+        app:layout_constraintStart_toStartOf="@id/userNameText"
+        app:layout_constraintTop_toBottomOf="@id/userBirthDateText" />
 
     <TextView
-        android:id="@+id/item_user_blood_type_value"
+        android:id="@+id/userBloodTypeValue"
         style="@style/Body1FontTheme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -81,22 +81,22 @@
         android:maxLines="1"
         app:layout_constrainedWidth="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/item_user_blood_type"
-        app:layout_constraintTop_toTopOf="@id/item_user_blood_type"
+        app:layout_constraintStart_toEndOf="@id/userBloodTypeText"
+        app:layout_constraintTop_toTopOf="@id/userBloodTypeText"
         tools:text="AB+" />
 
-    <ImageView
-        android:id="@+id/item_user_detail_icon"
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/userDetailIcon"
         android:layout_width="@dimen/item_user_detail_icon_width"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/item_user_detail_icon_marginTop"
         android:layout_marginEnd="@dimen/item_user_detail_icon_marginEnd"
         android:layout_marginBottom="@dimen/item_user_detail_icon_marginBottom"
         android:scaleType="fitCenter"
-        android:src="@drawable/ic_favorite"
+        app:srcCompat="@drawable/ic_favorite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/item_user_blood_type_value"
+        app:layout_constraintTop_toBottomOf="@id/userBloodTypeValue"
         tools:ignore="ContentDescription" />
 </androidx.constraintlayout.widget.ConstraintLayout>

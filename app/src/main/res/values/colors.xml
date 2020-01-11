@@ -5,6 +5,7 @@
     <color name="colorAccent">#D81B60</color>
 
     <color name="textColorPrimary">#000000</color>
+    <color name="textColorSecondary">#FFFFFF</color>
 
     <!--region Main -->
     <color name="main_fab_src">@color/colorPrimaryDark</color>
@@ -13,5 +14,11 @@
 
     <!--region Splash-->
     <color name="splash_background">@color/colorPrimary</color>
+    <!--endregion-->
+
+    <!--region User Editing -->
+    <color name="user_editing_photo_background">@color/colorPrimary</color>
+    <color name="user_editing_photo_icon_background">#999EA3</color>
+    <color name="user_editing_buttons_background">@color/colorPrimaryDark</color>
     <!--endregion-->
 </resources>

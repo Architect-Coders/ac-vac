@@ -11,20 +11,36 @@ import kotlin.random.Random
 
 class UserListViewModel : BaseViewModel(), UserListAdapter.Listener {
 
+    val visibleBottomAppBar = MutableLiveData<Boolean>()
+    val visibleFabButton = MutableLiveData<Boolean>()
     val users = MutableLiveData<List<User>>()
 
     init {
-        users.value = listOf(User(name = "Pepe"), User(name = "Juan"), User(name = "Pedro"))
-    }
-
-    @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
-    fun onCreate() {
-        // In this method, the user list is updated when an orientation change occurs
         users.value = listOf(
             User(name = Random.nextInt(100).toString()),
             User(name = Random.nextInt(100).toString()),
             User(name = Random.nextInt(100).toString())
         )
+    }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
+    fun onCreate() {
+        // In this method, the user list is updated when an orientation change occurs
+//        users.value = listOf(
+//            User(name = Random.nextInt(100).toString()),
+//            User(name = Random.nextInt(100).toString()),
+//            User(name = Random.nextInt(100).toString())
+//        )
+    }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_START)
+    fun onStart() {
+        showBottomViews()
+    }
+
+    private fun showBottomViews() {
+        visibleBottomAppBar.value = true
+        visibleFabButton.value = true
     }
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {

@@ -2,24 +2,22 @@ package com.example.vacunas.ui.user.list
 
 import android.os.Bundle
 import android.widget.LinearLayout
+import androidx.activity.OnBackPressedCallback
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.RecyclerView
 import com.example.vacunas.R
 import com.example.vacunas.base.ui.BaseFragment
-import com.example.vacunas.base.ui.bindView
+import com.example.vacunas.ui.main.view.MainActivity
+import kotlinx.android.synthetic.main.fragment_list_users.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class UserListFragment : BaseFragment<UserListViewModel>() {
 
     override val viewModel: UserListViewModel by viewModel()
 
-    private val userListView: RecyclerView by bindView(R.id.fragment_user_list_recycler)
-
     private val listAdapter: UserListAdapter<UserListViewModel> by lazy {
-        UserListAdapter(
-            viewModel
-        )
+        UserListAdapter(viewModel)
     }
 
     //region Lifecycle methods
@@ -27,13 +25,21 @@ class UserListFragment : BaseFragment<UserListViewModel>() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        setupView()
         setObservers()
+        setupView()
     }
 
     private fun setObservers() {
-        viewModel.users.observe(this, Observer {
+        viewModel.users.observe(viewLifecycleOwner, Observer {
             listAdapter.submitList(it)
+        })
+
+        viewModel.visibleBottomAppBar.observe(viewLifecycleOwner, Observer {
+            (activity as MainActivity).toggleBottomAppBar(it)
+        })
+
+        viewModel.visibleFabButton.observe(viewLifecycleOwner, Observer {
+            (activity as MainActivity).toggleFabButton(it)
         })
     }
 

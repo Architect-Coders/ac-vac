@@ -8,17 +8,18 @@
     <!--region User List & Editing-->
     <string name="user_list_item_blood_type">Grupo sanguíneo:</string>
 
-
-    <string name="user_editing_bloodtype_prompt">Elige tu grupo sanguíneo</string>
+    <string name="user_editing_name_hint">Nombre</string>
+    <string name="user_editing_birthdate_hint">Fecha de nacimiento</string>
+    <string name="user_editing_bloodtype_prompt">Elige tu grupo sanguíneo:</string>
     <string-array name="user_editing_bloodtype_array">
-        <item>A_POS</item>
-        <item>A_NEG</item>
-        <item>B_POS</item>
-        <item>B_NEG</item>
-        <item>AB_POS</item>
-        <item>AB_NEG</item>
-        <item>ZERO_POS</item>
-        <item>ZERO_NEG</item>
+        <item>A+</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B-</item>
+        <item>AB+</item>
+        <item>AB-</item>
+        <item>0+</item>
+        <item>0-</item>
     </string-array>
     <string name="user_editing_region_prompt">Elige tu Comunidad</string>
     <string-array name="user_editing_region_array">
@@ -28,6 +29,8 @@
         <item>Cantabria</item>
         <!-- TODO -->
     </string-array>
+    <string name="user_editing_cancel_option" >Cancelar</string>
+    <string name="user_editing_ok_option" >Aceptar</string>
     <!--endregion-->
 
 

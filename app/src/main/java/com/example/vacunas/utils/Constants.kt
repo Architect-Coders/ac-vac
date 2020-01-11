@@ -12,6 +12,7 @@ class Constants {
     object NavActions {
         const val SPLASH_TO_USERLIST = R.id.action_splashFragment_to_userListFragment
         const val USERLIST_TO_BLANK = R.id.action_userListFragment_to_blankFragment
+        const val USERLIST_TO_USEREDITING = R.id.action_userListFragment_to_userEditingFragment
     }
 
     object MenuItemType {
