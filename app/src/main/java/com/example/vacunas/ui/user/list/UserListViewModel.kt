@@ -9,6 +9,8 @@ import com.example.vacunas.data.repository.RepositoryFactory
 import com.example.vacunas.data.repository.utils.Response
 import kotlinx.coroutines.launch
 import org.koin.core.inject
+import java.text.SimpleDateFormat
+import java.util.*
 
 class UserListViewModel : BaseViewModel(), UserListAdapter.Listener {
 
@@ -23,6 +25,7 @@ class UserListViewModel : BaseViewModel(), UserListAdapter.Listener {
         viewUserListEmptyTextVisible.value?.not()
     }
     val viewUsersList: LiveData<List<User>> = Transformations.map(repositoryUserList) {
+        // Lis of users sorted by region for example
         repositoryUserList.value?.sortedWith(compareBy { it.region })
     }
 
@@ -70,7 +73,18 @@ class UserListViewModel : BaseViewModel(), UserListAdapter.Listener {
 
     //region Override UserListAdapter.Listener methods
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
-        holder.setName(viewUsersList.value!![position].name)
+        val user = viewUsersList.value!![position]
+        holder.setName(user.name)
+        holder.setBirthdate(
+            SimpleDateFormat(
+                androidResourceHelper.getStringRes(R.string.user_list_item_birthdate_format),
+                androidResourceHelper.getLocale()
+            ).format(Date(user.birthDate))
+        )
+        holder.setBloodType(
+            androidResourceHelper
+                .getStringArrayRes(R.array.user_editing_bloodtype_array)[user.bloodType.ordinal]
+        )
     }
     //endregion
 }

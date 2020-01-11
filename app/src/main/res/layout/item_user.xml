@@ -85,18 +85,32 @@
         app:layout_constraintTop_toTopOf="@id/userBloodTypeText"
         tools:text="AB+" />
 
-    <androidx.appcompat.widget.AppCompatImageView
+    <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/userDetailIcon"
         android:layout_width="@dimen/item_user_detail_icon_width"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/item_user_detail_icon_marginTop"
         android:layout_marginEnd="@dimen/item_user_detail_icon_marginEnd"
         android:layout_marginBottom="@dimen/item_user_detail_icon_marginBottom"
-        android:scaleType="fitCenter"
-        app:srcCompat="@drawable/ic_favorite"
+        android:scaleType="center"
+        android:background="?android:selectableItemBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/userBloodTypeValue"
+        app:srcCompat="@drawable/ic_favorite"
+        tools:ignore="ContentDescription" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/userDeleteIcon"
+        android:layout_width="@dimen/item_user_detail_icon_width"
+        android:layout_height="0dp"
+        android:scaleType="center"
+        android:background="?android:selectableItemBackground"
+        app:layout_constraintBottom_toBottomOf="@id/userDetailIcon"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="@id/userPhotoView"
+        app:layout_constraintTop_toTopOf="@id/userDetailIcon"
+        app:srcCompat="@drawable/ic_delete"
         tools:ignore="ContentDescription" />
 </androidx.constraintlayout.widget.ConstraintLayout>

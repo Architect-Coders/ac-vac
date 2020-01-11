@@ -55,7 +55,7 @@ class UserListFragment : BaseFragment<UserListViewModel>() {
 
     private fun setupView() {
         userListView.apply {
-            setHasFixedSize(true)
+            setHasFixedSize(false)
             addItemDecoration(DividerItemDecoration(context, LinearLayout.VERTICAL))
             adapter = this@UserListFragment.listAdapter
         }

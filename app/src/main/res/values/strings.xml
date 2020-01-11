@@ -8,6 +8,7 @@
     <!--region User List & Editing-->
     <string name="user_list_empty_message">No hay usuarios en la base de datos</string>
     <string name="user_list_error_get_db">Ha ocurrido un error: %1$s</string>
+    <string name="user_list_item_birthdate_format">dd \'de\' MMMM \'de\' yyyy</string>
     <string name="user_list_item_blood_type">Grupo sanguíneo:</string>
 
     <string name="user_editing_name_hint">Nombre</string>
