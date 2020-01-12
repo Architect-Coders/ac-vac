@@ -50,4 +50,23 @@
     <dimen name="editing_user_cancel_button_marginBottom">12dp</dimen>
     <dimen name="editing_user_ok_button_marginEnd">@dimen/editing_user_cancel_button_marginStart</dimen>
     <!-- endregion -->
+
+    <!-- region Detail User -->
+    <dimen name="detail_user_photo_width">@dimen/item_user_photo_width</dimen>
+    <dimen name="detail_user_photo_marginTop">@dimen/item_user_photo_marginTop</dimen>
+    <dimen name="detail_user_photo_marginStart">@dimen/item_user_photo_marginStart</dimen>
+    <dimen name="detail_user_name_marginStart">@dimen/item_user_name_marginStart</dimen>
+    <dimen name="detail_user_name_marginEnd">@dimen/item_user_name_marginEnd</dimen>
+    <dimen name="detail_user_name_autosize_min">@dimen/item_user_name_autosize_min</dimen>
+    <dimen name="detail_user_birthdate_marginTop">@dimen/item_user_birthdate_marginTop</dimen>
+    <dimen name="detail_user_birthdate_marginEnd">@dimen/detail_user_name_marginEnd</dimen>
+    <dimen name="detail_user_blood_type_marginTop">@dimen/item_user_blood_type_marginTop</dimen>
+    <dimen name="detail_user_blood_type_value_marginStart">@dimen/item_user_blood_type_value_marginStart</dimen>
+    <dimen name="detail_user_blood_type_value_marginEnd">@dimen/detail_user_name_marginEnd</dimen>
+    <dimen name="detail_user_region_marginTop">@dimen/detail_user_blood_type_marginTop</dimen>
+    <dimen name="detail_user_region_value_marginStart">@dimen/detail_user_blood_type_value_marginStart</dimen>
+    <dimen name="detail_user_region_value_marginEnd">@dimen/detail_user_blood_type_value_marginEnd</dimen>
+    <dimen name="detail_user_vaccine_marginTop">4dp</dimen>
+    <dimen name="detail_user_vaccine_marginEnd">@dimen/detail_user_name_marginEnd</dimen>
+    <!-- endregion -->
 </resources>

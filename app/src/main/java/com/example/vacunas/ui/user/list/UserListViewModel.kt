@@ -7,6 +7,10 @@ import com.example.vacunas.base.ui.BaseViewModel
 import com.example.vacunas.data.model.User
 import com.example.vacunas.data.repository.RepositoryFactory
 import com.example.vacunas.data.repository.utils.Response
+import com.example.vacunas.ui.detail.DetailFragment.Companion.ARG_USERID
+import com.example.vacunas.ui.user.adapter.UserListAdapter
+import com.example.vacunas.ui.user.adapter.UserViewHolder
+import com.example.vacunas.utils.Constants.NavActions.USERLIST_TO_DETAIL
 import kotlinx.coroutines.launch
 import org.koin.core.inject
 import java.text.SimpleDateFormat
@@ -83,7 +87,14 @@ class UserListViewModel : BaseViewModel(), UserListAdapter.Listener {
         )
         holder.setBloodType(
             androidResourceHelper
-                .getStringArrayRes(R.array.user_editing_bloodtype_array)[user.bloodType.ordinal]
+                .getStringArrayRes(R.array.user_bloodtype_array)[user.bloodType.ordinal]
+        )
+    }
+
+    override fun onUserItemClick(position: Int) {
+        _viewCommand.value = BaseViewCommand.Navigate(
+            USERLIST_TO_DETAIL,
+            args = arrayOf(ARG_USERID to viewUsersList.value!![position].userId)
         )
     }
     //endregion

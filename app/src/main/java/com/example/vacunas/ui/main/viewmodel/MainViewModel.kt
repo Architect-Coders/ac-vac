@@ -16,8 +16,7 @@ class MainViewModel : BaseViewModel(), MenuItemFactory.OnMenuItemSelected {
             delay(DELAY_SPLASH)
             withContext(Dispatchers.Main) {
                 _viewCommand.value = BaseViewCommand.Navigate(
-                    actionId = Constants.NavActions.SPLASH_TO_USERLIST,
-                    args = arrayOf("test1" to 1, "test2" to 2, "b" to null)   // TODO: QUITAR
+                    actionId = Constants.NavActions.SPLASH_TO_USERLIST
                 )
             }
         }

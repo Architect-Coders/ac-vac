@@ -12,7 +12,7 @@ interface UserDao {
     suspend fun getAll(): List<User>
 
     @Query("SELECT * FROM users WHERE userId == :userId")
-    suspend fun findByName(userId: Int): User
+    suspend fun findById(userId: Int): User
 
     @Insert
     suspend fun insert(user: User): Long

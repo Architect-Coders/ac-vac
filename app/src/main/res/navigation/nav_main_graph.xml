@@ -34,7 +34,18 @@
             app:popExitAnim="@anim/translate_exit" />
         <action
             android:id="@+id/action_userListFragment_to_userEditingFragment"
-            app:destination="@id/userEditingFragment" />
+            app:destination="@id/userEditingFragment"
+            app:enterAnim="@anim/fade_enter"
+            app:exitAnim="@anim/fade_exit"
+            app:popEnterAnim="@anim/fade_enter"
+            app:popExitAnim="@anim/fade_exit"/>
+        <action
+            android:id="@+id/action_userListFragment_to_detailFragment"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/translate_enter"
+            app:exitAnim="@anim/fade_exit"
+            app:popEnterAnim="@anim/fade_enter"
+            app:popExitAnim="@anim/translate_exit" />
     </fragment>
     <fragment
         android:id="@+id/blankFragment"
@@ -44,5 +55,11 @@
     <fragment
         android:id="@+id/userEditingFragment"
         android:name="com.example.vacunas.ui.user.editing.UserEditingFragment"
-        android:label="UserEditingFragment"/>
+        android:label="UserEditingFragment"
+        tools:layout="@layout/fragment_editing_user"/>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.vacunas.ui.detail.DetailFragment"
+        android:label="DetailFragment"
+        tools:layout="@layout/fragment_detail"/>
 </navigation>

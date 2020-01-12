@@ -24,6 +24,16 @@ class LocalRepository : LocalRepositoryInterface, KoinComponent {
         }
     }
 
+    override suspend fun findUserById(id: Int): Response<User> {
+        return withContext(Dispatchers.IO) {
+            try {
+                Response.Success(db.userDao().findById(id))
+            } catch (e: Exception) {
+                Response.Error<User>(e.message ?: "unknown")
+            }
+        }
+    }
+
     override suspend fun insertUser(user: User): Response<Long> {
         return withContext(Dispatchers.IO) {
             try {

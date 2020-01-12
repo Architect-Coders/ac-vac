@@ -6,8 +6,10 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.vacunas.R
 import com.example.vacunas.base.ui.BaseFragment
+import com.example.vacunas.base.ui.BaseViewCommand
 import com.example.vacunas.base.ui.visible
 import com.example.vacunas.ui.main.view.MainActivity
+import com.example.vacunas.ui.user.adapter.UserListAdapter
 import kotlinx.android.synthetic.main.fragment_list_users.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -29,6 +31,15 @@ class UserListFragment : BaseFragment<UserListViewModel>() {
     }
 
     private fun setObservers() {
+        viewModel.getViewCommand().observe(viewLifecycleOwner, Observer {
+            when (it) {
+                is BaseViewCommand.Navigate -> (activity as MainActivity).navigate(
+                    it.actionId,
+                    it.args
+                )
+            }
+        })
+
         viewModel.viewUsersList.observe(viewLifecycleOwner, Observer {
             // TODO: QUITAR
             println(">>> observer user list; size = ${it.size}")

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/userPhotoView"
+        android:layout_width="@dimen/detail_user_photo_width"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/detail_user_photo_marginStart"
+        android:layout_marginTop="@dimen/detail_user_photo_marginTop"
+        android:src="@drawable/user_photo"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/userNameText"
+        style="@style/H4FontTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/detail_user_name_marginStart"
+        android:layout_marginEnd="@dimen/detail_user_name_marginEnd"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:maxLines="2"
+        android:textColor="@color/textColorPrimary"
+        android:textStyle="bold"
+        app:autoSizeTextType="uniform"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="@id/userPhotoView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/userPhotoView"
+        app:layout_constraintTop_toTopOf="@id/userPhotoView"
+        tools:text="@tools:sample/lorem/random" />
+
+    <TextView
+        android:id="@+id/userBirthDateText"
+        style="@style/Body1FontTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/detail_user_birthdate_marginTop"
+        android:layout_marginEnd="@dimen/detail_user_birthdate_marginEnd"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@id/userNameText"
+        app:layout_constraintTop_toBottomOf="@id/userPhotoView"
+        tools:text="@tools:sample/lorem/random" />
+
+    <TextView
+        android:id="@+id/userBloodTypeText"
+        style="@style/Body1FontTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/detail_user_blood_type_marginTop"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/user_detail_blood_type"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@id/userBloodTypeValue"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/userNameText"
+        app:layout_constraintTop_toBottomOf="@id/userBirthDateText" />
+
+    <TextView
+        android:id="@+id/userBloodTypeValue"
+        style="@style/Body1FontTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/detail_user_blood_type_value_marginStart"
+        android:layout_marginEnd="@dimen/detail_user_blood_type_value_marginEnd"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/userBloodTypeText"
+        app:layout_constraintTop_toTopOf="@id/userBloodTypeText"
+        tools:text="AB+" />
+
+    <TextView
+        android:id="@+id/userRegionText"
+        style="@style/Body1FontTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/detail_user_region_marginTop"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/user_detail_region"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@id/userRegionValue"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/userNameText"
+        app:layout_constraintTop_toBottomOf="@id/userBloodTypeText" />
+
+    <TextView
+        android:id="@+id/userRegionValue"
+        style="@style/Body1FontTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/detail_user_region_value_marginStart"
+        android:layout_marginEnd="@dimen/detail_user_region_value_marginEnd"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/userRegionText"
+        app:layout_constraintTop_toTopOf="@id/userRegionText"
+        tools:text="Andalucía" />
+
+    <TextView
+        android:id="@+id/vaccineText"
+        style="@style/Body1FontTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/detail_user_vaccine_marginTop"
+        android:layout_marginEnd="@dimen/detail_user_vaccine_marginEnd"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/user_detail_vaccines"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@id/userNameText"
+        app:layout_constraintTop_toBottomOf="@id/userRegionText"
+        tools:text="@tools:sample/lorem/random" />
+
+    <TextView
+        android:id="@+id/_provisional"
+        style="@style/Body1FontTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:ellipsize="end"
+        android:isScrollContainer="true"
+        android:overScrollMode="ifContentScrolls"
+        android:scrollbars="vertical"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vaccineText"
+        tools:text="@tools:sample/lorem/random" />
+</androidx.constraintlayout.widget.ConstraintLayout>
