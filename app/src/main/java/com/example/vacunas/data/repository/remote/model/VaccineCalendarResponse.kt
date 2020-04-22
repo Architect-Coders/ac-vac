@@ -1,9 +1,8 @@
 package com.example.vacunas.data.repository.remote.model
 
-import com.example.vacunas.data.repository.remote.model.VaccineResponse
-import com.example.vacunas.data.repository.remote.model.VaccineNoteResponse
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import java.util.Collections.emptyList
 
 data class VaccineCalendarResponse(
     @SerializedName("vaccines")

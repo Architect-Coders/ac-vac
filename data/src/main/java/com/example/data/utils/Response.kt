@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.vacunas.data.repository.utils
+package com.example.data.utils
 
 sealed class Response<T>(
     val data: T? = null,

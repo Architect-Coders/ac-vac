@@ -1,4 +1,4 @@
-package com.example.vacunas.data.model
+package com.example.domain
 
 data class Vaccine(
     val name: String,

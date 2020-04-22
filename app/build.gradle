@@ -22,6 +22,10 @@ android {
             targetCompatibility JavaVersion.VERSION_1_8
         }
 
+        kotlinOptions {
+            jvmTarget = JavaVersion.VERSION_1_8.toString()
+        }
+
         androidExtensions {
             experimental = true
         }
@@ -49,15 +53,19 @@ android {
 }
 
 dependencies {
-    def nav_version = "2.2.0-rc04"
-    def lifecycle_version = "2.1.0"
+    def nav_version = "2.3.0-alpha05"
+    def lifecycle_version = "2.2.0"
     def koin_version = "2.0.1"
-    def room_version = "2.2.3"
+    def room_version = "2.2.5"
     def retrofit_version = "2.7.1"
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.1.0'
+    implementation 'androidx.core:core-ktx:1.2.0'
+
+    implementation project(":domain")
+    implementation project(":data")
+    implementation project(":usecases")
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'

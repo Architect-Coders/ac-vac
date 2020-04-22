@@ -4,11 +4,11 @@ import androidx.lifecycle.*
 import com.example.vacunas.R
 import com.example.vacunas.base.ui.BaseViewCommand
 import com.example.vacunas.base.ui.BaseViewModel
-import com.example.vacunas.data.model.BloodType
-import com.example.vacunas.data.model.SpainRegion
-import com.example.vacunas.data.model.User
-import com.example.vacunas.data.repository.RepositoryFactory
-import com.example.vacunas.data.repository.utils.Response
+import com.example.domain.BloodType
+import com.example.domain.SpainRegion
+import com.example.domain.User
+import com.example.data.UserRepository
+import com.example.data.utils.Response
 import kotlinx.coroutines.launch
 import org.koin.core.inject
 import java.text.SimpleDateFormat
@@ -17,7 +17,7 @@ import java.util.*
 
 class UserEditingViewModel : BaseViewModel() {
 
-    private val repository: RepositoryFactory by inject()
+    private val userRepository: UserRepository by inject()
 
     companion object {
         const val DATE_FORMAT = "dd/MM/yyyy"
@@ -94,7 +94,7 @@ class UserEditingViewModel : BaseViewModel() {
 
     private fun saveUser(user: User) {
         viewModelScope.launch {
-            when (val response = repository.saveUser(user)) {
+            when (val response = userRepository.saveUser(user)) {
                 is Response.Success -> {
                     println(">>> ID insertado: ${response.data}")
                     _viewCommand.value = BaseViewCommand.BackNavigate

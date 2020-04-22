@@ -4,10 +4,10 @@ import androidx.lifecycle.*
 import com.example.vacunas.R
 import com.example.vacunas.base.ui.BaseViewCommand
 import com.example.vacunas.base.ui.BaseViewModel
-import com.example.vacunas.data.model.SpainRegion
-import com.example.vacunas.data.model.User
-import com.example.vacunas.data.repository.RepositoryFactory
-import com.example.vacunas.data.repository.utils.Response
+import com.example.domain.SpainRegion
+import com.example.domain.User
+import com.example.data.UserRepository
+import com.example.data.utils.Response
 import kotlinx.coroutines.launch
 import org.koin.core.inject
 import java.text.SimpleDateFormat
@@ -17,7 +17,7 @@ import kotlin.random.Random
 
 class DetailViewModel(private val userId: Int) : BaseViewModel(), VaccineListAdapter.Listener {
 
-    private val repository: RepositoryFactory by inject()
+    private val userRepository: UserRepository by inject()
     val user = MutableLiveData<User>()
 
     val isLoading = MutableLiveData<Boolean>()
@@ -53,7 +53,7 @@ class DetailViewModel(private val userId: Int) : BaseViewModel(), VaccineListAda
 
     private fun getUserFromRepository(userId: Int) {
         viewModelScope.launch {
-            when (val response = repository.findUserById(userId)) {
+            when (val response = userRepository.findUserById(userId)) {
                 is Response.Success -> {
                     user.value = response.data
                     isLoading.value = false

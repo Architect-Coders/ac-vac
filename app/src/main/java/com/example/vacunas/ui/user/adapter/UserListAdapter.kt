@@ -4,7 +4,7 @@ import android.view.View
 import androidx.recyclerview.widget.DiffUtil
 import com.example.vacunas.R
 import com.example.vacunas.base.ui.BaseListAdapter
-import com.example.vacunas.data.model.User
+import com.example.domain.User
 
 class UserListAdapter<T : UserListAdapter.Listener>(private val listener: T) :
     BaseListAdapter<User, UserViewHolder, T>(

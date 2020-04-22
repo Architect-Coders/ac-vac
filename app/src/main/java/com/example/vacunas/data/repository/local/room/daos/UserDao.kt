@@ -1,10 +1,10 @@
-package com.example.vacunas.data.repository.local.db.daos
+package com.example.vacunas.data.repository.local.room.daos
 
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
-import com.example.vacunas.data.model.User
+import com.example.vacunas.data.repository.local.room.model.User
 
 @Dao
 interface UserDao {

@@ -4,9 +4,9 @@ import androidx.lifecycle.*
 import com.example.vacunas.R
 import com.example.vacunas.base.ui.BaseViewCommand
 import com.example.vacunas.base.ui.BaseViewModel
-import com.example.vacunas.data.model.User
-import com.example.vacunas.data.repository.RepositoryFactory
-import com.example.vacunas.data.repository.utils.Response
+import com.example.domain.User
+import com.example.data.UserRepository
+import com.example.data.utils.Response
 import com.example.vacunas.ui.detail.DetailFragment.Companion.ARG_USERID
 import com.example.vacunas.ui.user.adapter.UserListAdapter
 import com.example.vacunas.ui.user.adapter.UserViewHolder
@@ -18,7 +18,7 @@ import java.util.*
 
 class UserListViewModel : BaseViewModel(), UserListAdapter.Listener {
 
-    private val repository: RepositoryFactory by inject()
+    private val userRepository: UserRepository by inject()
     val repositoryUserList = MutableLiveData<List<User>>()
 
     val isLoading = MutableLiveData<Boolean>()
@@ -29,7 +29,7 @@ class UserListViewModel : BaseViewModel(), UserListAdapter.Listener {
         viewUserListEmptyTextVisible.value?.not()
     }
     val viewUsersList: LiveData<List<User>> = Transformations.map(repositoryUserList) {
-        // Lis of users sorted by region for example
+        // List of users sorted by region for example
         repositoryUserList.value?.sortedWith(compareBy { it.region })
     }
 
@@ -54,7 +54,7 @@ class UserListViewModel : BaseViewModel(), UserListAdapter.Listener {
 
     private fun getUserListFromRepository() {
         viewModelScope.launch {
-            when (val response = repository.getUserList()) {
+            when (val response = userRepository.getUserList()) {
                 is Response.Success -> {
                     repositoryUserList.value = response.data
                     viewUserListEmptyTextVisible.value = ((response.data?.size ?: 0) <= 0)
