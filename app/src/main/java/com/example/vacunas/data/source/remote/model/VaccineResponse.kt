@@ -1,4 +1,4 @@
-package com.example.vacunas.data.repository.remote.model
+package com.example.vacunas.data.source.remote.model
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName

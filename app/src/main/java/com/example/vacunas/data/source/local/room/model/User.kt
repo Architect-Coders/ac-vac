@@ -1,4 +1,4 @@
-package com.example.vacunas.data.repository.local.room.model
+package com.example.vacunas.data.source.local.room.model
 
 import androidx.room.*
 import com.example.domain.BloodType

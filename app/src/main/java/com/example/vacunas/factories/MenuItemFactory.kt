@@ -1,7 +1,6 @@
-package com.example.vacunas.data.factories
+package com.example.vacunas.factories
 
 import com.example.vacunas.utils.Constants
-
 
 class MenuItemFactory {
     companion object {

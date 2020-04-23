@@ -1,11 +1,9 @@
-package com.example.vacunas.data.repository.remote
+package com.example.vacunas.data.source.remote
 
-import com.example.data.VaccineRemoteDataSource
+import com.example.data.source.VaccineRemoteDataSource
 import com.example.data.utils.Response
 import com.example.domain.SpainRegion
 import com.example.domain.VaccineCalendar
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
 import org.koin.core.KoinComponent
 import org.koin.core.inject
 import java.util.Collections.emptyList

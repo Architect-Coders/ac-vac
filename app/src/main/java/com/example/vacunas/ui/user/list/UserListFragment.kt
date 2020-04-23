@@ -2,12 +2,12 @@ package com.example.vacunas.ui.user.list
 
 import android.os.Bundle
 import android.widget.LinearLayout
+import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.vacunas.R
 import com.example.vacunas.base.ui.BaseFragment
 import com.example.vacunas.base.ui.BaseViewCommand
-import com.example.vacunas.base.ui.visible
 import com.example.vacunas.ui.main.view.MainActivity
 import com.example.vacunas.ui.user.adapter.UserListAdapter
 import kotlinx.android.synthetic.main.fragment_list_users.*
@@ -48,19 +48,19 @@ class UserListFragment : BaseFragment<UserListViewModel>() {
         })
 
         viewModel.viewUserListEmptyTextVisible.observe(viewLifecycleOwner, Observer {
-            userListMsg.visible = it
+            userListMsg.isVisible = it
         })
 
         viewModel.viewUserListVisible.observe(viewLifecycleOwner, Observer {
-            userListView.visible = it
+            userListView.isVisible = it
         })
 
         viewModel.visibleBottomAppBar.observe(viewLifecycleOwner, Observer {
-            (activity as MainActivity).toggleBottomAppBar(it)
+            (activity as MainActivity).toggleBottomAppBarVisibility(it)
         })
 
         viewModel.visibleFabButton.observe(viewLifecycleOwner, Observer {
-            (activity as MainActivity).toggleFabButton(it)
+            (activity as MainActivity).toggleFabButtonVisibility(it)
         })
     }
 

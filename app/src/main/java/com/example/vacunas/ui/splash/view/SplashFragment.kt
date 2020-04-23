@@ -22,11 +22,11 @@ class SplashFragment : BaseFragment<SplashViewModel>() {
 
     private fun setObservers() {
         viewModel.visibleBottomAppBar.observe(viewLifecycleOwner, Observer {
-            (activity as MainActivity).toggleBottomAppBar(it)
+            (activity as MainActivity).toggleBottomAppBarVisibility(it)
         })
 
         viewModel.visibleFabButton.observe(viewLifecycleOwner, Observer {
-            (activity as MainActivity).toggleFabButton(it)
+            (activity as MainActivity).toggleFabButtonVisibility(it)
         })
     }
     //endregion

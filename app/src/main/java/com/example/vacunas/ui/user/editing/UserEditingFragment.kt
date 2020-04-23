@@ -8,10 +8,7 @@ import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.example.vacunas.R
-import com.example.vacunas.base.ui.BaseFragment
-import com.example.vacunas.base.ui.BaseViewCommand
-import com.example.vacunas.base.ui.content
-import com.example.vacunas.base.ui.toast
+import com.example.vacunas.base.ui.*
 import com.example.vacunas.base.utils.toInt
 import com.example.vacunas.ui.main.view.MainActivity
 import kotlinx.android.synthetic.main.fragment_editing_user.*
@@ -58,11 +55,11 @@ class UserEditingFragment : BaseFragment<UserEditingViewModel>() {
         })
 
         viewModel.visibleBottomAppBar.observe(viewLifecycleOwner, Observer {
-            (activity as MainActivity).toggleBottomAppBar(it)
+            (activity as MainActivity).toggleBottomAppBarVisibility(it)
         })
 
         viewModel.visibleFabButton.observe(viewLifecycleOwner, Observer {
-            (activity as MainActivity).toggleFabButton(it)
+            (activity as MainActivity).toggleFabButtonVisibility(it)
         })
 
         viewModel.birthDate.observe(viewLifecycleOwner, Observer {
@@ -75,9 +72,7 @@ class UserEditingFragment : BaseFragment<UserEditingViewModel>() {
             viewModel.onAfterNameTextChanged(it as CharSequence)
         }
 
-        userBirthdateInput.setOnClickListener {
-            viewModel.onBirthdateClicked()
-        }
+        userBirthdateInput.setOnSimpleClickListener(viewModel::onBirthdateClicked)
 
         userBloodTypeInput.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
@@ -105,8 +100,8 @@ class UserEditingFragment : BaseFragment<UserEditingViewModel>() {
             override fun onNothingSelected(parent: AdapterView<*>) {}
         }
 
-        userCancelOption.setOnClickListener { viewModel.onCancelClicked() }
-        userOkOption.setOnClickListener { viewModel.onOkClicked() }
+        userCancelOption.setOnSimpleClickListener(viewModel::onCancelClicked)
+        userOkOption.setOnSimpleClickListener(viewModel::onOkClicked)
     }
 
     private fun openPickerDialog() {

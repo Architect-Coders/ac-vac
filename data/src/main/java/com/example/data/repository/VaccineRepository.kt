@@ -1,15 +1,14 @@
-package com.example.data
+package com.example.data.repository
 
+import com.example.data.source.VaccineRemoteDataSource
 import com.example.data.utils.Response
 import com.example.domain.SpainRegion
 import com.example.domain.VaccineCalendar
-import org.koin.core.KoinComponent
-import org.koin.core.inject
 
 
-class VaccineRepository : KoinComponent {
-
-    val vaccineRemoteDataSource: VaccineRemoteDataSource by inject()
+class VaccineRepository(
+    val vaccineRemoteDataSource: VaccineRemoteDataSource
+) {
 
     // TODO: REVISAR
 //    val connectionHelper: ConnectionHelper by inject()
@@ -19,12 +18,4 @@ class VaccineRepository : KoinComponent {
         // TODO: Aplicar control de conexión a intenret y manejo de errores genéricos
         return vaccineRemoteDataSource.getVaccineCalendar(spainRegion)
     }
-}
-
-interface VaccineDataSource
-
-interface VaccineLocalDataSource : VaccineDataSource
-
-interface VaccineRemoteDataSource : VaccineDataSource {
-    fun getVaccineCalendar(spainRegion: SpainRegion): Response<VaccineCalendar>
 }

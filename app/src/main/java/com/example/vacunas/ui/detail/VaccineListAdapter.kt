@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vacunas.R
 import com.example.vacunas.base.ui.BaseListAdapter
-import com.example.vacunas.data.repository.remote.model.VaccineResponse
+import com.example.vacunas.data.source.remote.model.VaccineResponse
 import kotlinx.android.extensions.LayoutContainer
 
 class VaccineListAdapter<T : VaccineListAdapter.Listener>(listener: T) :

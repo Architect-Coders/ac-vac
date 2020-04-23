@@ -1,16 +1,16 @@
-package com.example.vacunas.data.repository.local
+package com.example.vacunas.data.source.local
 
-import com.example.data.UserLocalDataSource
+import com.example.data.source.UserLocalDataSource
 import com.example.data.utils.Response
-import com.example.vacunas.data.repository.local.room.daos.UserDao
-import com.example.vacunas.data.repository.local.room.model.toDomainUser
-import com.example.vacunas.data.repository.local.room.model.toRoomUser
+import com.example.vacunas.data.source.local.room.daos.UserDao
+import com.example.vacunas.data.source.local.room.model.toDomainUser
+import com.example.vacunas.data.source.local.room.model.toRoomUser
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.koin.core.KoinComponent
 import org.koin.core.inject
 import com.example.domain.User as DomainUser
-import com.example.vacunas.data.repository.local.room.model.User as RoomUser
+import com.example.vacunas.data.source.local.room.model.User as RoomUser
 
 class UserRoomDataSource : UserLocalDataSource, KoinComponent {
 

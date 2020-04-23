@@ -5,7 +5,7 @@ import com.example.vacunas.R
 import com.example.vacunas.base.ui.BaseViewCommand
 import com.example.vacunas.base.ui.BaseViewModel
 import com.example.domain.User
-import com.example.data.UserRepository
+import com.example.data.repository.UserRepository
 import com.example.data.utils.Response
 import com.example.vacunas.ui.detail.DetailFragment.Companion.ARG_USERID
 import com.example.vacunas.ui.user.adapter.UserListAdapter

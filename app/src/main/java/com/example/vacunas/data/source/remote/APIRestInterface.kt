@@ -1,7 +1,7 @@
-package com.example.vacunas.data.repository.remote
+package com.example.vacunas.data.source.remote
 
 import com.example.domain.SpainRegion
-import com.example.vacunas.data.repository.remote.model.VaccineCalendarResponse
+import com.example.vacunas.data.source.remote.model.VaccineCalendarResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

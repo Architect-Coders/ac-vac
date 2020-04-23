@@ -31,11 +31,11 @@ class DetailFragment : BaseFragment<DetailViewModel>() {
 
     fun setObservers() {
         viewModel.visibleBottomAppBar.observe(viewLifecycleOwner, Observer {
-            (activity as MainActivity).toggleBottomAppBar(it)
+            (activity as MainActivity).toggleBottomAppBarVisibility(it)
         })
 
         viewModel.visibleFabButton.observe(viewLifecycleOwner, Observer {
-            (activity as MainActivity).toggleFabButton(it)
+            (activity as MainActivity).toggleFabButtonVisibility(it)
         })
 
         viewModel.userView.observe(viewLifecycleOwner, Observer {

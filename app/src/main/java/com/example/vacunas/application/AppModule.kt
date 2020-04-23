@@ -2,12 +2,15 @@ package com.example.vacunas.application
 
 import android.content.Context
 import androidx.room.Room
+import com.example.data.repository.UserRepository
+import com.example.data.repository.VaccineRepository
+import com.example.data.source.UserLocalDataSource
 import com.example.vacunas.BuildConfig
-import com.example.vacunas.data.repository.local.UserRoomDataSource
-import com.example.vacunas.data.repository.local.room.AppDatabase
-import com.example.vacunas.data.repository.local.room.daos.UserDao
-import com.example.vacunas.data.repository.remote.APIRestInterface
-import com.example.vacunas.data.repository.remote.VaccineRetrofitDataSource
+import com.example.vacunas.data.source.local.UserRoomDataSource
+import com.example.vacunas.data.source.local.room.AppDatabase
+import com.example.vacunas.data.source.local.room.daos.UserDao
+import com.example.vacunas.data.source.remote.APIRestInterface
+import com.example.vacunas.data.source.remote.VaccineRetrofitDataSource
 import com.example.vacunas.helpers.AndroidResourceHelper
 import com.example.vacunas.helpers.ConnectionHelper
 import com.example.vacunas.ui.blank.BlankViewModel
@@ -30,24 +33,36 @@ import java.util.concurrent.TimeUnit
 fun Application.initKoin() {
     startKoin {
         androidContext(this@initKoin)
-        modules(listOf(appModule))
+        modules(listOf(appModule, useCasesModule, dataModule))
     }
 }
 
+val useCasesModule = module {
+
+}
+
+val dataModule = module {
+    single { UserRepository(get()) }
+    single { VaccineRepository(get()) }
+}
+
 val appModule = module {
-    // Provide Singletons
+    // Provide Helpers
     single { AndroidResourceHelper(get()) }
     single { ConnectionHelper(get()) }
-    single { provideGson() }
-    single { provideRoom(get()) }
 
-    // Provide Retrofit
+    // Provide Remote Repository
+    single { provideGson() }
     single { createOkHttpClient(get()) }
     single { createRetrofitClient<APIRestInterface>(get()) }
 
-    // Provide Repositories
-    single { UserRoomDataSource() }
-    single { VaccineRetrofitDataSource() }
+    // Provide Local Repository
+    single { provideRoom(get()) }
+    single { provideUserDAO(get()) }
+
+    // Provide DataSources
+    factory<UserLocalDataSource>() { UserRoomDataSource() }
+    factory { VaccineRetrofitDataSource() }
 
     // Provide ViewModels
     viewModel { MainViewModel() }
@@ -59,11 +74,6 @@ val appModule = module {
 }
 
 fun provideGson(): Gson = GsonBuilder().excludeFieldsWithoutExposeAnnotation().create()
-
-fun provideRoom(context: Context): AppDatabase =
-    Room.databaseBuilder(context, AppDatabase::class.java, BuildConfig.DATABASE_NAME).build()
-
-fun provideUserDAO(database: AppDatabase): UserDao = database.userDao()
 
 fun createOkHttpClient(context: Context): OkHttpClient {
     return OkHttpClient.Builder()
@@ -81,3 +91,8 @@ inline fun <reified T> createRetrofitClient(okHttpClient: OkHttpClient): T {
         .build()
     return retrofit.create(T::class.java)
 }
+
+fun provideRoom(context: Context): AppDatabase =
+    Room.databaseBuilder(context, AppDatabase::class.java, BuildConfig.DATABASE_NAME).build()
+
+fun provideUserDAO(database: AppDatabase): UserDao = database.userDao()

@@ -1,10 +1,10 @@
-package com.example.vacunas.data.repository.local.room
+package com.example.vacunas.data.source.local.room
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.example.vacunas.data.repository.local.room.daos.UserDao
-import com.example.vacunas.data.repository.local.room.model.User
+import com.example.vacunas.data.source.local.room.daos.UserDao
+import com.example.vacunas.data.source.local.room.model.User
 
 @Database(entities = [User::class], version = 1)
 @TypeConverters(User.Converters::class)

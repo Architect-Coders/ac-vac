@@ -2,7 +2,7 @@ package com.example.vacunas.ui.main.viewmodel
 
 import com.example.vacunas.base.ui.BaseViewCommand
 import com.example.vacunas.base.ui.BaseViewModel
-import com.example.vacunas.data.factories.MenuItemFactory
+import com.example.vacunas.factories.MenuItemFactory
 import com.example.vacunas.utils.Constants
 import kotlinx.coroutines.*
 

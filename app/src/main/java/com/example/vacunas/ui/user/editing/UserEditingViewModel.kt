@@ -7,7 +7,7 @@ import com.example.vacunas.base.ui.BaseViewModel
 import com.example.domain.BloodType
 import com.example.domain.SpainRegion
 import com.example.domain.User
-import com.example.data.UserRepository
+import com.example.data.repository.UserRepository
 import com.example.data.utils.Response
 import kotlinx.coroutines.launch
 import org.koin.core.inject
